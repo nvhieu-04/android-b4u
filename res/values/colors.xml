@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFAFCC</color>
+    <color name="purple_500">#FFAFCC</color>//Mau cua bottom_nav
+    <color name="purple_700">#8E7D7D</color>//Mau cua icon
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#FFAFCC</color>
+    <color name="colorPrimaryDark">#FFAFCC</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimaryLight">#FFEFF5</color>
+    <color name="colorBackground">#E5E5E5</color>
+    <color name="colorTrendingStart">#00B09B</color>
+    <color name="colorTrendingEnd">#96C93D</color>
+    <color name="colorDivider">#D6D6D6</color>
+</resources>
