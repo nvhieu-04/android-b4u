@@ -90,7 +90,7 @@
                         android:layout_height="27dp"
                         android:layout_marginStart="112dp"
                         android:layout_marginTop="56dp"
-                        android:background="@drawable/pink_btn_background"
+                        android:background="@drawable/button_background"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
@@ -209,7 +209,7 @@
                         android:layout_height="27dp"
                         android:layout_marginStart="112dp"
                         android:layout_marginTop="56dp"
-                        android:background="@drawable/pink_btn_background"
+                        android:background="@drawable/button_background"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
@@ -412,7 +412,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="16dp"
-                android:background="@drawable/pink_btn_background">
+                android:background="@drawable/button_background">
 
                 <TextView
                     android:id="@+id/textView5"
