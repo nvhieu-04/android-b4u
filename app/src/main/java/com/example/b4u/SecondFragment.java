@@ -5,10 +5,22 @@ import android.os.Bundle;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import com.example.b4u.adapter.AllCategoryAdapter;
+import com.example.b4u.adapter.CategoryAdapter;
+import com.example.b4u.model.AllCategory;
+import com.example.b4u.model.Category;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,12 +68,36 @@ public class SecondFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+    RecyclerView allCategoryRecycler;
+    AllCategoryAdapter allCategoryAdapter;
+    List<AllCategory>  allcategoryList;
+    ImageView back;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View v = inflater.inflate(R.layout.fragment_second, container, false);
+        allCategoryRecycler = v.findViewById(R.id.allCategoryView);
+//        back = v.findViewById(R.id.back);
+
+        //adding category
+        allcategoryList = new ArrayList<>();
+        allcategoryList.add(new AllCategory(1,R.drawable.category_1));
+        allcategoryList.add(new AllCategory(2,R.drawable.category_2));
+        allcategoryList.add(new AllCategory(3,R.drawable.category_3));
+        allcategoryList.add(new AllCategory(4,R.drawable.category_4));
+        allcategoryList.add(new AllCategory(5,R.drawable.category_5));
+        allcategoryList.add(new AllCategory(6,R.drawable.category_6));
+        setallcategoryRecycler(allcategoryList);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false);
+        return v;
+    }
+    private void setallcategoryRecycler(List<AllCategory> allcategoryDataList) {
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this.getContext(),3);
+        allCategoryRecycler.setLayoutManager(layoutManager);
+        allCategoryAdapter = new AllCategoryAdapter(this.getContext(), allcategoryDataList);
+        allCategoryRecycler.setAdapter(allCategoryAdapter);
     }
     @Override
     public void onResume() {

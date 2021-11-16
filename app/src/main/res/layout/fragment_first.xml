@@ -65,20 +65,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imageUser"
             >
+
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="@null"
-                android:hint="Tìm sản phẩm bạn muốn"
+                android:hint="Search right here"
                 android:imeOptions="actionSearch"
+                android:importantForAutofill="no"
                 android:inputType="text"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
                 android:textColor="@color/colorAccent"
-                android:textSize="16sp"
-                android:importantForAutofill="no"
-                />
+                android:textSize="16sp" />
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -96,6 +96,7 @@
         android:id="@+id/Scrollview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="40dp"
         android:background="@color/colorBackground"
         android:overScrollMode="never"
         android:scrollbars="none"
@@ -116,11 +117,14 @@
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
 
                 <ImageView
                     android:id="@+id/banner"
@@ -137,60 +141,69 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:layout_marginTop="16dp"
-                    android:text="DANH MỤC BẠN QUAN TÂM"
+                    android:text="RECOMMEND FOR YOU"
                     android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold" />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:clipToPadding="false"
-                    android:paddingStart="22dp"
-                    android:paddingEnd="22dp"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textCategory" />
+
                 <TextView
                     android:id="@+id/textHotpick"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:layout_marginTop="16dp"
-                    android:text="GỢI Ý DÀNH RIÊNG CHO BẠN"
+                    android:text="LIST CATEGORY"
                     android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold" />
+
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:clipToPadding="false"
-                    android:paddingStart="22dp"
-                    android:paddingEnd="22dp"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textHotpick" />
+                    app:layout_constraintTop_toBottomOf="@+id/textHotpick">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
                 <TextView
                     android:id="@+id/textproduct"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:layout_marginTop="16dp"
-                    android:text="SẢN PHẨM BÁN CHẠY "
+                    android:text="HOT PICK"
                     android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold" />
+
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:clipToPadding="false"
-                    android:paddingStart="22dp"
-                    android:paddingEnd="22dp"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textproduct" />
