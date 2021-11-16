@@ -13,10 +13,11 @@
         android:layout_width="148dp"
         android:layout_height="184dp"
         android:layout_marginStart="41dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="41dp"
         android:background="@drawable/border"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/product_2" />
@@ -28,18 +29,19 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="72dp"
+        android:fontFamily="@font/open_sans_semibold"
         android:text="product_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img"
-        tools:textColor="#FF0505" />
+        tools:textColor="#FF0000" />
 
     <TextView
         android:id="@+id/product_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="4dp"
         android:text="product_description"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +54,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:text="price"
-        android:textColor="@color/black"
+        android:textColor="#FF0000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_description" />
 
@@ -60,14 +62,11 @@
         android:id="@+id/qty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginStart="20dp"
         android:text="qty"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/price" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price" />
 
     <TextView
         android:id="@+id/unit"
