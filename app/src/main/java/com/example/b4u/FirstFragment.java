@@ -98,12 +98,12 @@ public class FirstFragment extends Fragment {
         setproductCareRecycler(productCareList);
         //adding image to category
         categoryList = new ArrayList<>();
-        categoryList.add(new Category(1,R.drawable.category_1));
-        categoryList.add(new Category(2,R.drawable.category_2));
-        categoryList.add(new Category(3,R.drawable.category_3));
-        categoryList.add(new Category(4,R.drawable.category_4));
-        categoryList.add(new Category(5,R.drawable.category_5));
-        categoryList.add(new Category(6,R.drawable.category_6));
+        categoryList.add(new Category(1,R.drawable.category_1,"Lips"));
+        categoryList.add(new Category(2,R.drawable.category_2,"Eye"));
+        categoryList.add(new Category(3,R.drawable.category_3,"Body"));
+        categoryList.add(new Category(4,R.drawable.category_4,"Face"));
+        categoryList.add(new Category(5,R.drawable.category_5,"Skin"));
+        categoryList.add(new Category(6,R.drawable.category_6,"Perfume"));
         setcategoryRecycler(categoryList);
 
         //adding product

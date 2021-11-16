@@ -3,10 +3,20 @@ package com.example.b4u.model;
 public class Category {
     Integer id;
     Integer imageurl;
+    String  name;
 
-    public Category(Integer id, Integer imageurl) {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Category(Integer id, Integer imageurl, String name) {
         this.id = id;
         this.imageurl = imageurl;
+        this.name = name;
     }
 
     public Integer getId() {
