@@ -1,6 +1,7 @@
 package com.example.b4u.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,9 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.b4u.Product_details;
 import com.example.b4u.R;
 import com.example.b4u.model.Product;
 
@@ -38,9 +39,23 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.name.setText(productList.get(position).getName());
         holder.description.setText(productList.get(position).getDescription());
         holder.price.setText(productList.get(position).getPrice());
-        holder.qty.setText(productList.get(position).getQuantity());
-        holder.unit.setText(productList.get(position).getUnit());
+        holder.pricebf.setText(productList.get(position).getPrice_before());
+        holder.rate.setText(productList.get(position).getRate());
         holder.img.setImageResource(productList.get(position).getImageUrl());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, Product_details.class);
+
+                i.putExtra("name", productList.get(position).getName());
+                i.putExtra("description", productList.get(position).getDescription());
+                i.putExtra("price", productList.get(position).getPrice());
+                i.putExtra("pricebf", productList.get(position).getPrice_before());
+                i.putExtra("rate", productList.get(position).getRate());
+                context.startActivity(i);
+            }
+        });
 
     }
 
@@ -50,15 +65,15 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     public static class ProductViewHolder extends RecyclerView.ViewHolder{
-        TextView name,description, price, qty, unit;
+        TextView name,description, price, pricebf, rate;
         ImageView img;
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.product_name);
             description = itemView.findViewById(R.id.product_description);
             price = itemView.findViewById(R.id.price);
-            qty = itemView.findViewById(R.id.qty);
-            unit = itemView.findViewById(R.id.unit);
+            pricebf = itemView.findViewById(R.id.price_before);
+            rate = itemView.findViewById(R.id.rate);
             img = itemView.findViewById(R.id.img);
 
         }

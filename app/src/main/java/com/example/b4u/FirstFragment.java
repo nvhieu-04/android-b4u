@@ -108,12 +108,12 @@ public class FirstFragment extends Fragment {
 
         //adding product
         productList = new ArrayList<>();
-        productList.add(new Product("Love for sale shadow palette","Description","Price","Price Before","5/5",R.drawable.product_1));
-        productList.add(new Product("Four-way shadow palette","Description","Price","Price Before","5/5",R.drawable.product_2));
-        productList.add(new Product("La luce lip glaze","Description","Price","Price","Price Before",R.drawable.product_3));
-        productList.add(new Product("Glam attack metallic crème","Description","12$","Price Before","5/5",R.drawable.product_4));
-        productList.add(new Product("PhD hybrid lip oil","Description","Price","Price Before","5/5",R.drawable.product_5));
-        productList.add(new Product("Le riot lip gloss","Description","Price","Price Before","5/5",R.drawable.product_6));
+        productList.add(new Product("Love for sale shadow palette","Description","Price","Price Before","5/5",R.drawable.product_1,R.drawable.product_1));
+        productList.add(new Product("Four-way shadow palette","Description","Price","Price Before","5/5",R.drawable.product_2,R.drawable.product_2));
+        productList.add(new Product("La luce lip glaze","Description","Price","Price Before","Price Before",R.drawable.product_3,R.drawable.product_3));
+        productList.add(new Product("Glam attack metallic crème","Description","Price","Price Before","5/5",R.drawable.product_4,R.drawable.product_4));
+        productList.add(new Product("PhD hybrid lip oil","Description","Price","Price Before","5/5",R.drawable.product_5,R.drawable.product_5));
+        productList.add(new Product("Le riot lip gloss","Description","Price","Price Before","5/5",R.drawable.product_6,R.drawable.product_6));
         setproductRecycler(productList);
         // Inflate the layout for this fragment
         return v;

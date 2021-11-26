@@ -4,17 +4,27 @@ public class Product {
     String name;
     String description;
     String price;
-    String quantity;
-    String unit;
+    String price_before;
+    String rate;
     Integer imageUrl;
+    int bigimageurl;
 
-    public Product(String name, String description, String price, String quantity, String unit, Integer imageUrl) {
+    public int getBigimageurl() {
+        return bigimageurl;
+    }
+
+    public void setBigimageurl(int bigimageurl) {
+        this.bigimageurl = bigimageurl;
+    }
+
+    public Product(String name, String description, String price, String price_before, String rate, Integer imageUrl, int bigimageurl) {
         this.name = name;
         this.description = description;
         this.price = price;
-        this.quantity = quantity;
-        this.unit = unit;
+        this.price_before = price_before;
+        this.rate = rate;
         this.imageUrl = imageUrl;
+        this.bigimageurl = bigimageurl;
     }
 
     public String getName() {
@@ -41,20 +51,20 @@ public class Product {
         this.price = price;
     }
 
-    public String getQuantity() {
-        return quantity;
+    public String getPrice_before() {
+        return price_before;
     }
 
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
+    public void setPrice_before(String price_before) {
+        this.price_before = price_before;
     }
 
-    public String getUnit() {
-        return unit;
+    public String getRate() {
+        return rate;
     }
 
-    public void setUnit(String unit) {
-        this.unit = unit;
+    public void setRate(String rate) {
+        this.rate = rate;
     }
 
     public Integer getImageUrl() {

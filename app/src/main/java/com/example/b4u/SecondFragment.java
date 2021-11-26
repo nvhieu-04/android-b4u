@@ -1,5 +1,6 @@
 package com.example.b4u;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBar;
@@ -67,6 +68,7 @@ public class SecondFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
     RecyclerView allCategoryRecycler;
     AllCategoryAdapter allCategoryAdapter;
@@ -92,6 +94,9 @@ public class SecondFragment extends Fragment {
         setallcategoryRecycler(allcategoryList);
         // Inflate the layout for this fragment
         return v;
+
+
+
     }
     private void setallcategoryRecycler(List<AllCategory> allcategoryDataList) {
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this.getContext(),3);
