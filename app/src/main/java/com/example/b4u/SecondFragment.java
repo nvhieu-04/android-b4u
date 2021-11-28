@@ -104,19 +104,5 @@ public class SecondFragment extends Fragment {
         allCategoryAdapter = new AllCategoryAdapter(this.getContext(), allcategoryDataList);
         allCategoryRecycler.setAdapter(allCategoryAdapter);
     }
-    @Override
-    public void onResume() {
-        super.onResume();
-        ActionBar supportActionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
-        if (supportActionBar != null)
-            supportActionBar.hide();
-    }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        ActionBar supportActionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
-        if (supportActionBar != null)
-            supportActionBar.show();
-    }
 }

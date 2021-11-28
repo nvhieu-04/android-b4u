@@ -64,19 +64,4 @@ public class FourthFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_fourth, container, false);
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        ActionBar supportActionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
-        if (supportActionBar != null)
-            supportActionBar.hide();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        ActionBar supportActionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
-        if (supportActionBar != null)
-            supportActionBar.show();
-    }
 }

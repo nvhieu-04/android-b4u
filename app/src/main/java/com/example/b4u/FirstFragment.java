@@ -87,6 +87,7 @@ public class FirstFragment extends Fragment {
         categoryView = v.findViewById(R.id.recyclerView2);
         productView = v.findViewById(R.id.recyclerView3);
         //Adding Images to care list view
+        //Vài bữa add i chang line 111->116
         productCareList = new ArrayList<>();
         productCareList.add(new ProductCare(1,R.drawable.product_care_1));
         productCareList.add(new ProductCare(2,R.drawable.product_care_2));
@@ -137,21 +138,7 @@ public class FirstFragment extends Fragment {
         productView.setAdapter(productAdapter);
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        ActionBar supportActionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
-        if (supportActionBar != null)
-            supportActionBar.hide();
-    }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        ActionBar supportActionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
-        if (supportActionBar != null)
-            supportActionBar.show();
-    }
 
 
 }
