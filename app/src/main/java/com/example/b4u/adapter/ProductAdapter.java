@@ -1,5 +1,6 @@
 package com.example.b4u.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -35,7 +36,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ProductViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.name.setText(productList.get(position).getName());
         holder.description.setText(productList.get(position).getDescription());
         holder.price.setText(productList.get(position).getPrice());

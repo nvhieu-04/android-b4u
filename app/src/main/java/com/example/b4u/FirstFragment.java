@@ -2,23 +2,22 @@ package com.example.b4u;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 
+import com.example.b4u.adapter.CareProductAdapter;
 import com.example.b4u.adapter.CategoryAdapter;
 import com.example.b4u.adapter.ProductAdapter;
-import com.example.b4u.adapter.ProductCareAdapter;
+import com.example.b4u.model.CareProduct;
 import com.example.b4u.model.Category;
 import com.example.b4u.model.Product;
-import com.example.b4u.model.ProductCare;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,9 +59,9 @@ public class FirstFragment extends Fragment {
         return fragment;
     }
     RecyclerView productCareView, categoryView,productView;
-    ProductCareAdapter productCareAdapter;
-    List<ProductCare>  productCareList;
+    CareProductAdapter careProductAdapter;
     CategoryAdapter categoryAdapter;
+    List<CareProduct> careProductList;
     List<Category> categoryList;
     ProductAdapter productAdapter;
     List<Product> productList;
@@ -73,7 +72,6 @@ public class FirstFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
 
@@ -88,15 +86,13 @@ public class FirstFragment extends Fragment {
         productView = v.findViewById(R.id.recyclerView3);
         //Adding Images to care list view
         //Vài bữa add i chang line 111->116
-        productCareList = new ArrayList<>();
-        productCareList.add(new ProductCare(1,R.drawable.product_care_1));
-        productCareList.add(new ProductCare(2,R.drawable.product_care_2));
-        productCareList.add(new ProductCare(3,R.drawable.product_care_3));
-        productCareList.add(new ProductCare(4,R.drawable.product_care_4));
-        productCareList.add(new ProductCare(5,R.drawable.product_care_5));
-        productCareList.add(new ProductCare(6,R.drawable.product_care_6));
+        careProductList = new ArrayList<>();
+        careProductList.add((new CareProduct("Love for sale shadow palette","Description","Price","Price Before","5/5",R.drawable.product_1,R.drawable.product_1)));
 
-        setproductCareRecycler(productCareList);
+
+        setcareproductRecycler(careProductList);
+
+
         //adding image to category
         categoryList = new ArrayList<>();
         categoryList.add(new Category(1,R.drawable.category_1,"Lips"));
@@ -117,13 +113,33 @@ public class FirstFragment extends Fragment {
         productList.add(new Product("Le riot lip gloss","Description","Price","Price Before","5/5",R.drawable.product_6,R.drawable.product_6));
         setproductRecycler(productList);
         // Inflate the layout for this fragment
+        ImageView user = v.findViewById(R.id.imageUser);
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ThirdFragment nextFrag= new ThirdFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(((ViewGroup)getView().getParent()).getId(), nextFrag, "findThisFragment")
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+
+
+
+
         return v;
+        ///
+
+
+
     }
-    private void setproductCareRecycler(List<ProductCare> dataList) {
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(), LinearLayoutManager.HORIZONTAL, false);
+
+    private void setcareproductRecycler(List<CareProduct> productcareDataList) {
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(),LinearLayoutManager.HORIZONTAL,false);
         productCareView.setLayoutManager(layoutManager);
-        productCareAdapter = new ProductCareAdapter(this.getContext(), dataList);
-        productCareView.setAdapter(productCareAdapter);
+        careProductAdapter = new CareProductAdapter(this.getContext(), productcareDataList);
+        productCareView.setAdapter(careProductAdapter);
     }
     private void setcategoryRecycler(List<Category> categoryDataList) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(),LinearLayoutManager.HORIZONTAL,false);

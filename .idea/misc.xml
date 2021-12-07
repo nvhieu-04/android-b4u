@@ -32,6 +32,7 @@
         <entry key="..\:/android-b4u/app/src/main/res/drawable/rec2.xml" value="0.1625" />
         <entry key="..\:/android-b4u/app/src/main/res/drawable/rectangley.xml" value="0.17263513513513515" />
         <entry key="..\:/android-b4u/app/src/main/res/drawable/white_retangle.xml" value="0.17263513513513515" />
+        <entry key="..\:/android-b4u/app/src/main/res/layout/activity_cart_acitivity.xml" value="0.10405405405405406" />
         <entry key="..\:/android-b4u/app/src/main/res/layout/activity_main.xml" value="0.16216216216216217" />
         <entry key="..\:/android-b4u/app/src/main/res/layout/activity_product_details.xml" value="0.16216216216216217" />
         <entry key="..\:/android-b4u/app/src/main/res/layout/all_category_list.xml" value="0.6" />
@@ -40,6 +41,7 @@
         <entry key="..\:/android-b4u/app/src/main/res/layout/fragment_fourth.xml" value="0.176" />
         <entry key="..\:/android-b4u/app/src/main/res/layout/fragment_second.xml" value="0.176" />
         <entry key="..\:/android-b4u/app/src/main/res/layout/fragment_third.xml" value="0.16216216216216217" />
+        <entry key="..\:/android-b4u/app/src/main/res/layout/product_care.xml" value="0.16216216216216217" />
         <entry key="..\:/android-b4u/app/src/main/res/layout/product_care_list.xml" value="0.1" />
         <entry key="..\:/android-b4u/app/src/main/res/layout/product_viewed_items.xml" value="0.264" />
         <entry key="..\:/android-b4u/app/src/main/res/menu/bottom_menu.xml" value="0.16216216216216217" />

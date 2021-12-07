@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class Product_details extends AppCompatActivity {
     String name,des,price,rate;
     int image;
-    ImageView img,back;
+    ImageView img,back,cart;
     TextView productname,productdes, productprice, productrate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,14 @@ public class Product_details extends AppCompatActivity {
             }
         });
         View decorView = getWindow().getDecorView();
-
+        cart = findViewById(R.id.cart);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Product_details.this,cart_acitivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 

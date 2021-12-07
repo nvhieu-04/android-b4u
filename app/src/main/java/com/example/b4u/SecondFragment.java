@@ -1,5 +1,7 @@
 package com.example.b4u;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -93,6 +95,26 @@ public class SecondFragment extends Fragment {
         allcategoryList.add(new AllCategory(6,R.drawable.category_6));
         setallcategoryRecycler(allcategoryList);
         // Inflate the layout for this fragment
+        //
+        ImageView back_btn = v.findViewById(R.id.back);
+        ImageView cart_btn = v.findViewById(R.id.cart);
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        cart_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FourthFragment nextFrag= new FourthFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(((ViewGroup)getView().getParent()).getId(), nextFrag, "findThisFragment")
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
         return v;
 
 

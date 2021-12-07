@@ -52,7 +52,6 @@
             app:layout_constraintBottom_toBottomOf="@id/textHello"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/textHello"
-
             app:tint="@color/white" />
         <LinearLayout
             android:layout_width="match_parent"

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.B4u">
         <activity
+            android:name=".cart_acitivity"
+            android:exported="false" />
+        <activity
             android:name=".Product_details"
             android:exported="false" />
         <activity
@@ -17,6 +20,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
