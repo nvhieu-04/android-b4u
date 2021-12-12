@@ -113,6 +113,7 @@ public class FirstFragment extends Fragment {
         productList.add(new Product("Le riot lip gloss","Description","Price","Price Before","5/5",R.drawable.product_6,R.drawable.product_6));
         setproductRecycler(productList);
         // Inflate the layout for this fragment
+        
         ImageView user = v.findViewById(R.id.imageUser);
         user.setOnClickListener(new View.OnClickListener() {
             @Override
