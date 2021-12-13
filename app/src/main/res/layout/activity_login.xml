@@ -52,7 +52,7 @@
                 app:srcCompat="@drawable/border_login" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/editTextEmail"
                 android:layout_width="229dp"
                 android:layout_height="52dp"
                 android:layout_alignTop="@+id/imageView2"
@@ -83,7 +83,7 @@
                 app:srcCompat="@drawable/human" />
 
             <EditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/editTextPassword"
                 android:layout_width="228dp"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/imageView3"
@@ -105,7 +105,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="11dp"
                 android:layout_marginBottom="16dp"
-                android:layout_toStartOf="@+id/editTextTextPassword"
+                android:layout_toStartOf="@+id/editTextPassword"
                 app:srcCompat="@drawable/lock" />
 
             <CheckBox
@@ -121,7 +121,7 @@
                 android:text="Remember me" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textForgetPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -164,12 +164,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
                 android:layout_marginStart="26dp"
-                android:layout_marginEnd="115dp"
                 android:text="Don't have an account?" />
 
             <TextView
+                android:id="@+id/createAccount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"

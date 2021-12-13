@@ -398,7 +398,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/textForgetPassword"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="22.38$"

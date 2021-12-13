@@ -33,14 +33,14 @@
                 android:layout_marginTop="40dp">
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName2"
+                    android:id="@+id/editTextTextPersonName"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="15dp"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Name" />
+                    android:text="Họ và Tên" />
 
                 <ImageView
                     android:id="@+id/imageView4"
@@ -65,7 +65,7 @@
 
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/editTextEmail"
                     android:layout_width="249dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -75,7 +75,7 @@
                     android:layout_marginEnd="13dp"
                     android:layout_marginBottom="0dp"
                     android:ems="10"
-                    android:hint="Email/Phone"
+                    android:hint="Email"
                     android:inputType="textPersonName"
                     android:textColor="@color/silver" />
 
@@ -83,7 +83,7 @@
                     android:id="@+id/imageView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/editTextTextPersonName"
+                    android:layout_alignTop="@+id/editTextEmail"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="12dp"
@@ -103,7 +103,7 @@
 
 
                 <EditText
-                    android:id="@+id/editTextTextPassword"
+                    android:id="@+id/editTextPassword"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -112,7 +112,7 @@
                     android:layout_marginEnd="13dp"
                     android:layout_marginBottom="2dp"
                     android:ems="10"
-                    android:hint="Password"
+                    android:hint="Mật Khẩu"
                     android:inputType="textPassword" />
 
                 <ImageView
@@ -124,7 +124,7 @@
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="18dp"
                     android:layout_marginBottom="16dp"
-                    android:layout_toStartOf="@+id/editTextTextPassword"
+                    android:layout_toStartOf="@+id/editTextPassword"
                     app:srcCompat="@drawable/lock" />
 
             </RelativeLayout>
@@ -147,7 +147,7 @@
                     android:layout_marginEnd="13dp"
                     android:layout_marginBottom="2dp"
                     android:ems="10"
-                    android:hint="Confirm Password"
+                    android:hint="Nhập lại mật khẩu"
                     android:inputType="textPassword" />
 
                 <ImageView
@@ -173,10 +173,10 @@
                     android:layout_marginTop="49dp"
                     android:layout_marginEnd="156dp"
                     android:layout_marginBottom="-55dp"
-                    android:text="I agree with the" />
+                    android:text="Tôi đồng ý với " />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/textForgetPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/editTextConfirmPassword"
@@ -184,7 +184,7 @@
                     android:layout_marginTop="64dp"
                     android:layout_marginEnd="37dp"
 
-                    android:text="terms and conditions"
+                    android:text="Điều Khoản Sử Dụng"
                     android:textColor="@color/colorPrimary" />
 
 
@@ -195,18 +195,18 @@
 
         <Button
             android:id="@+id/login_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="92dp"
             android:layout_below="@+id/logo_layout"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="22dp"
-            android:layout_marginBottom="88dp"
+            android:layout_marginStart="39dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="42dp"
+            android:layout_marginBottom="195dp"
             android:background="@drawable/custom_button_login"
-            android:text="CREATE"
+            android:text="Tạo Tài Khoản"
             android:textColor="@color/black" />
 
     </RelativeLayout>
