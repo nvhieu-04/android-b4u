@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.B4u">
         <activity
-            android:name=".CreateAccountActivity"
+            android:name=".LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".MainActivity"
             android:exported="true" />
         <activity
             android:name=".IntroActivity"
@@ -28,7 +28,7 @@
             android:name=".Product_details"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".CreateAccountActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class CreateAccountActivity extends AppCompatActivity {
     EditText fEmail,fName,fPassword,fPasswordAgain;
     Button btnLogin;
-    TextView fTerm;
+    TextView fTerm,fLogin;
     FirebaseAuth firebaseAuth;
     CheckBox fcheckBox;
     @Override
@@ -37,13 +37,21 @@ public class CreateAccountActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.login_button);
         fTerm = findViewById(R.id.textForgetPassword);
         fcheckBox = findViewById(R.id.checkBox);
+        fLogin = findViewById(R.id.loginScreen);
         firebaseAuth =FirebaseAuth.getInstance();
+
+
         if(firebaseAuth.getCurrentUser() != null)
         {
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
             finish();
         }
-
+        fLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+            }
+        });
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +70,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                 {
                     fPassword.setError("Mật khẩu phải có trên 6 kí tự");
                 }
-                if(password != passwordCheck)
+                if(!password.equals(passwordCheck))
                 {
                     fPassword.setError("Mật khẩu bạn nhập phải trùng nhau");
                 }
@@ -77,7 +85,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
                         }
                         else {
-                            Toast.makeText(CreateAccountActivity.this,"Lỗi",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CreateAccountActivity.this,"Lỗi hoặc tài khoản bạn tạo đã tồn tại",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

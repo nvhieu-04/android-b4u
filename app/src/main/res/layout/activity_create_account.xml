@@ -1,214 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+
+    <ImageView
+        android:id="@+id/intro_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/create_account" />
 
 
-        <RelativeLayout
-            android:id="@+id/logo_layout"
-            android:layout_width="match_parent"
-            android:layout_height="550dp">
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:hint="Họ và Tên"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/intro_image"
+        app:layout_constraintTop_toBottomOf="@+id/intro_image" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName"
+        app:srcCompat="@drawable/human" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="249dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:textColor="@color/silver"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/editTextEmail"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextEmail"
+        app:layout_constraintEnd_toStartOf="@+id/editTextEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextEmail"
+        app:srcCompat="@drawable/mail" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Mật Khẩu"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextEmail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/editTextPassword"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextConfirmPassword"
+        app:layout_constraintEnd_toStartOf="@+id/editTextConfirmPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextConfirmPassword"
+        app:srcCompat="@drawable/lock" />
+
+    <EditText
+        android:id="@+id/editTextConfirmPassword"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Nhập lại mật khẩu"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+    <ImageView
+        android:id="@+id/image_lock"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/editTextConfirmPassword"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextPassword"
+        app:layout_constraintEnd_toStartOf="@+id/editTextPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextPassword"
+        app:layout_constraintVertical_bias="0.545"
+        app:srcCompat="@drawable/lock" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="146dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextConfirmPassword"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="48dp"
+        android:text="Tôi đồng ý với "
+        app:layout_constraintEnd_toStartOf="@+id/textForgetPassword"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword" />
+
+    <TextView
+        android:id="@+id/textForgetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextConfirmPassword"
+        android:layout_alignParentEnd="true"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="63dp"
+        android:text="Điều Khoản Sử Dụng"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/editTextConfirmPassword"
+        app:layout_constraintStart_toEndOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="250dp"
+        android:layout_height="92dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custom_button_login"
+        android:text="Tạo Tài Khoản"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/loginScreen"
+        app:layout_constraintStart_toStartOf="@+id/loginScreen"
+        app:layout_constraintTop_toBottomOf="@+id/loginScreen" />
+
+    <TextView
+        android:id="@+id/loginScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Đã có tài khoản? Đăng nhập tại đây."
+        app:layout_constraintEnd_toEndOf="@+id/textForgetPassword"
+        app:layout_constraintStart_toStartOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
 
-            <ImageView
-                android:id="@+id/intro_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                app:srcCompat="@drawable/create_account" />
-
-            <RelativeLayout
-                android:id="@+id/user_name_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/intro_image"
-                android:layout_marginTop="40dp">
-
-                <EditText
-                    android:id="@+id/editTextTextPersonName"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="15dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Họ và Tên" />
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="19dp"
-                    android:layout_marginTop="13dp"
-                    android:layout_marginEnd="19dp"
-                    android:layout_marginBottom="8dp"
-                    app:srcCompat="@drawable/human" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/email_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/user_name_layout"
-                android:gravity="left">
-
-
-                <EditText
-                    android:id="@+id/editTextEmail"
-                    android:layout_width="249dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="65dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="13dp"
-                    android:layout_marginBottom="0dp"
-                    android:ems="10"
-                    android:hint="Email"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/silver" />
-
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/editTextEmail"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="13dp"
-                    android:layout_marginEnd="270dp"
-                    app:srcCompat="@drawable/mail" />
-
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/enter_pass_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/email_edit_text"
-                android:gravity="center">
-
-
-                <EditText
-                    android:id="@+id/editTextPassword"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="11dp"
-                    android:layout_marginEnd="13dp"
-                    android:layout_marginBottom="2dp"
-                    android:ems="10"
-                    android:hint="Mật Khẩu"
-                    android:inputType="textPassword" />
-
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="35dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="18dp"
-                    android:layout_marginBottom="16dp"
-                    android:layout_toStartOf="@+id/editTextPassword"
-                    app:srcCompat="@drawable/lock" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/confirm_pass_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/enter_pass_layout"
-                android:gravity="center">
-
-
-                <EditText
-                    android:id="@+id/editTextConfirmPassword"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="11dp"
-                    android:layout_marginEnd="13dp"
-                    android:layout_marginBottom="2dp"
-                    android:ems="10"
-                    android:hint="Nhập lại mật khẩu"
-                    android:inputType="textPassword" />
-
-                <ImageView
-                    android:id="@+id/image_lock"
-                    android:layout_width="35dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="18dp"
-                    android:layout_marginBottom="16dp"
-                    android:layout_toStartOf="@+id/editTextConfirmPassword"
-                    app:srcCompat="@drawable/lock" />
-
-                <CheckBox
-                    android:id="@+id/checkBox"
-                    android:layout_width="146dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/editTextConfirmPassword"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="49dp"
-                    android:layout_marginEnd="156dp"
-                    android:layout_marginBottom="-55dp"
-                    android:text="Tôi đồng ý với " />
-
-                <TextView
-                    android:id="@+id/textForgetPassword"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/editTextConfirmPassword"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="64dp"
-                    android:layout_marginEnd="37dp"
-
-                    android:text="Điều Khoản Sử Dụng"
-                    android:textColor="@color/colorPrimary" />
-
-
-            </RelativeLayout>
-
-
-        </RelativeLayout>
-
-        <Button
-            android:id="@+id/login_button"
-            android:layout_width="250dp"
-            android:layout_height="92dp"
-            android:layout_below="@+id/logo_layout"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="39dp"
-            android:layout_marginTop="9dp"
-            android:layout_marginEnd="42dp"
-            android:layout_marginBottom="195dp"
-            android:background="@drawable/custom_button_login"
-            android:text="Tạo Tài Khoản"
-            android:textColor="@color/black" />
-
-    </RelativeLayout>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

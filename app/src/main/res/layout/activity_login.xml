@@ -64,8 +64,8 @@
                 android:layout_marginEnd="34dp"
                 android:layout_marginBottom="0dp"
                 android:ems="10"
+                android:hint="Địa chỉ Email"
                 android:inputType="textPersonName"
-                android:text="Email/Phone"
                 android:textColor="@color/silver" />
 
             <ImageView
@@ -91,7 +91,7 @@
                 android:layout_marginEnd="31dp"
                 android:layout_marginBottom="2dp"
                 android:ems="10"
-                android:hint="Password"
+                android:hint="Mật khẩu"
                 android:inputType="textPassword" />
 
             <ImageView
@@ -175,7 +175,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="174dp"
                 android:layout_marginEnd="22dp"
-                android:text="Create a new account"
+                android:text="Tạo tài khoản"
                 android:textColor="@color/colorPrimary">
 
             </TextView>

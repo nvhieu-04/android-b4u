@@ -1,5 +1,6 @@
 package com.example.b4u;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBar;
@@ -9,6 +10,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,7 +51,7 @@ public class ThirdFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
+    Button btn_SignOut;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +65,17 @@ public class ThirdFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_third, container, false);
+       View v = inflater.inflate(R.layout.fragment_third, container, false);
+       btn_SignOut = v.findViewById(R.id.btnSignOut);
+       btn_SignOut.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               FirebaseAuth.getInstance().signOut();
+               Intent intent = new Intent(getActivity().getApplication(),LoginActivity.class);
+               startActivity(intent);
+           }
+       });
+       return v;
     }
+
 }
