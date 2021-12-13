@@ -10,4 +10,5 @@
     <color name="colorTrendingStart">#00B09B</color>
     <color name="colorTrendingEnd">#96C93D</color>
     <color name="colorDivider">#D6D6D6</color>
+    <color name="silver">#C0C0C0</color>
 </resources>

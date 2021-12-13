@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.B4u">
         <activity
+            android:name=".CreateAccountActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".IntroActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true" />
+        <activity
             android:name=".cart_acitivity"
             android:exported="false" />
         <activity
