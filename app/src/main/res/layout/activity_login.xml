@@ -1,188 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+
+    <ImageView
+        android:id="@+id/intro_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/loginlogo" />
 
 
-        <RelativeLayout
-            android:id="@+id/image_layout"
-            android:layout_width="match_parent"
-            android:layout_height="570dp">
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="229dp"
+        android:layout_height="52dp"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_alignBottom="@+id/imageView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="37dp"
+        android:ems="10"
+        android:hint="Địa chỉ Email"
+        android:inputType="textPersonName"
+        android:textColor="@color/silver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/intro_image"
+        app:layout_constraintTop_toBottomOf="@+id/intro_image" />
 
-            <ImageView
-                android:id="@+id/intro_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/loginlogo" />
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextEmail"
+        app:layout_constraintEnd_toStartOf="@+id/editTextEmail"
+        app:layout_constraintTop_toTopOf="@+id/editTextEmail"
+        app:srcCompat="@drawable/human" />
 
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="228dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView3"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextEmail"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_alignBottom="@+id/intro_image"
-                android:layout_marginBottom="47dp">
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="32dp"
+        android:layout_toStartOf="@+id/editTextPassword"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextPassword"
+        app:layout_constraintEnd_toStartOf="@+id/editTextPassword"
+        app:layout_constraintTop_toTopOf="@+id/editTextPassword"
+        app:srcCompat="@drawable/lock" />
 
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="146dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:text="Nhớ tài khoản"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
-            </RelativeLayout>
+    <TextView
+        android:id="@+id/textForgetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="40dp"
+        android:text="Quên tài khoản?"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/login_button"
+        app:layout_constraintStart_toStartOf="@+id/login_button"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/intro_image"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="77dp"
-                android:layout_marginBottom="236dp"
-                app:srcCompat="@drawable/border_login" />
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/custom_button_login"
+        android:text="Đăng Nhập"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/intro_image"
+        app:layout_constraintStart_toStartOf="@+id/intro_image"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="156dp"
-                app:srcCompat="@drawable/border_login" />
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="32dp"
+        android:text="Lần đầu tiên ở đây?"
+        app:layout_constraintStart_toStartOf="@+id/login_button"
+        app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
-            <EditText
-                android:id="@+id/editTextEmail"
-                android:layout_width="229dp"
-                android:layout_height="52dp"
-                android:layout_alignTop="@+id/imageView2"
-                android:layout_alignBottom="@+id/imageView2"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="69dp"
-                android:layout_marginTop="11dp"
-                android:layout_marginEnd="34dp"
-                android:layout_marginBottom="0dp"
-                android:ems="10"
-                android:hint="Địa chỉ Email"
-                android:inputType="textPersonName"
-                android:textColor="@color/silver" />
+    <TextView
+        android:id="@+id/createAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="32dp"
+        android:text="Tạo tài khoản"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/login_button"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/login_button">
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/imageView2"
-                android:layout_alignBottom="@+id/imageView2"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="22dp"
-                android:layout_marginEnd="268dp"
-                android:layout_marginBottom="16dp"
-                app:srcCompat="@drawable/human" />
+    </TextView>
 
-            <EditText
-                android:id="@+id/editTextPassword"
-                android:layout_width="228dp"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/imageView3"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="31dp"
-                android:layout_marginBottom="2dp"
-                android:ems="10"
-                android:hint="Mật khẩu"
-                android:inputType="textPassword" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/imageView3"
-                android:layout_alignBottom="@+id/imageView3"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="38dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="11dp"
-                android:layout_marginBottom="16dp"
-                android:layout_toStartOf="@+id/editTextPassword"
-                app:srcCompat="@drawable/lock" />
-
-            <CheckBox
-                android:id="@+id/checkBox"
-                android:layout_width="146dp"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/imageView3"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="17dp"
-                android:layout_marginEnd="168dp"
-                android:layout_marginBottom="-55dp"
-                android:text="Remember me" />
-
-            <TextView
-                android:id="@+id/textForgetPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="7dp"
-                android:text="Forgot your password?"
-                android:textColor="@color/colorPrimary" />
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/next_button_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/image_layout"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/login_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/custom_button_login"
-                android:text="LOGIN"
-                android:textColor="@color/black" />
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:id="@+id/create_account_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/next_button_layout"
-            android:layout_marginTop="20dp"
-            android:gravity="center">
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="26dp"
-                android:text="Don't have an account?" />
-
-            <TextView
-                android:id="@+id/createAccount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="174dp"
-                android:layout_marginEnd="22dp"
-                android:text="Tạo tài khoản"
-                android:textColor="@color/colorPrimary">
-
-            </TextView>
-
-
-        </RelativeLayout>
-
-
-    </RelativeLayout>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

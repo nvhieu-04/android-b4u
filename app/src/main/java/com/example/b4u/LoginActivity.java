@@ -54,13 +54,17 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     fPassword.setError("Mật khẩu phải có trên 6 kí tự");
                 }
+                if(!fcheckBox.isChecked())
+                {
+
+                }
 
                 firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful())
                         {
-                            Toast.makeText(LoginActivity.this,"Đăng nhập thành công.",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,"Chào mừng bạn quay trở lại. Chúc bạn một ngày tốt lành!",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
                         }

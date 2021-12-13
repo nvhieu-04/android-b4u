@@ -58,22 +58,30 @@ public class CreateAccountActivity extends AppCompatActivity {
                 String email = fEmail.getText().toString().trim();
                 String password = fPassword.getText().toString().trim();
                 String passwordCheck = fPasswordAgain.getText().toString().trim();
+                if (!fcheckBox.isChecked())
+                {
+                    Toast.makeText(CreateAccountActivity.this,"Bạn chưa đồng ý điều khoản",Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 if(TextUtils.isEmpty(email)){
                     fEmail.setError("Vui lòng nhập lại địa chỉ email");
                     return;
                 }
-                if(TextUtils.isEmpty(password)){
+                if(TextUtils.isEmpty(password) ){
                     fPassword.setError("Vui lòng nhập lại mật khẩu");
                     return;
                 }
                 if(password.length() < 6)
                 {
                     fPassword.setError("Mật khẩu phải có trên 6 kí tự");
+                    return;
                 }
                 if(!password.equals(passwordCheck))
                 {
                     fPassword.setError("Mật khẩu bạn nhập phải trùng nhau");
+                    return;
                 }
+
 
                 firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
