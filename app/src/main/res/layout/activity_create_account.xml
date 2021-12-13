@@ -137,6 +137,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="52dp"
         android:text="Tôi đồng ý với "
+        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/textForgetPassword"
         app:layout_constraintStart_toStartOf="@+id/imageView5"
         app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword" />
@@ -152,6 +153,7 @@
         android:layout_marginTop="63dp"
         android:text="Điều Khoản Sử Dụng"
         android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/editTextConfirmPassword"
         app:layout_constraintStart_toEndOf="@+id/checkBox"
         app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword" />
@@ -179,6 +181,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:text="Đã có tài khoản? Đăng nhập tại đây."
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/textForgetPassword"
         app:layout_constraintStart_toStartOf="@+id/checkBox"
         app:layout_constraintTop_toBottomOf="@+id/checkBox" />

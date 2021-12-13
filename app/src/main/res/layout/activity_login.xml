@@ -93,7 +93,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="40dp"
-        android:text="Quên tài khoản?"
+        android:text="Quên tài khoản hoặc mật khẩu?"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/login_button"
         app:layout_constraintStart_toStartOf="@+id/login_button"
