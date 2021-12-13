@@ -53,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(password.length() < 6)
                 {
                     fPassword.setError("Mật khẩu phải có trên 6 kí tự");
+                    return;
                 }
                 if(!fcheckBox.isChecked())
                 {
