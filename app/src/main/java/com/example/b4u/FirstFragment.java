@@ -88,7 +88,11 @@ public class FirstFragment extends Fragment {
         //Vài bữa add i chang line 111->116
         careProductList = new ArrayList<>();
         careProductList.add((new CareProduct("Love for sale shadow palette","Description","Price","Price Before","5/5",R.drawable.product_1,R.drawable.product_1)));
-
+        careProductList.add(new CareProduct("Four-way shadow palette","Description","Price","Price Before","5/5",R.drawable.product_2,R.drawable.product_2));
+        careProductList.add(new CareProduct("La luce lip glaze","Description","Price","Price Before","Price Before",R.drawable.product_3,R.drawable.product_3));
+        careProductList.add(new CareProduct("Glam attack metallic crème","Description","Price","Price Before","5/5",R.drawable.product_4,R.drawable.product_4));
+        careProductList.add(new CareProduct("PhD hybrid lip oil","Description","Price","Price Before","5/5",R.drawable.product_5,R.drawable.product_5));
+        careProductList.add(new CareProduct("Le riot lip gloss","Description","Price","Price Before","5/5",R.drawable.product_6,R.drawable.product_6));
 
         setcareproductRecycler(careProductList);
 
@@ -130,10 +134,6 @@ public class FirstFragment extends Fragment {
 
 
         return v;
-        ///
-
-
-
     }
 
     private void setcareproductRecycler(List<CareProduct> productcareDataList) {

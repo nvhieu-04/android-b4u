@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.b4u.CareProduct_details;
 import com.example.b4u.Product_details;
 import com.example.b4u.R;
 import com.example.b4u.model.CareProduct;
@@ -32,11 +33,11 @@ public class CareProductAdapter extends RecyclerView.Adapter<CareProductAdapter.
     @Override
     public CareProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.product_care,parent,false);
-        return new CareProductAdapter.CareProductViewHolder(view);
+        return new CareProductViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CareProductViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull CareProductViewHolder holder, int position) {
         holder.name.setText(careProductList.get(position).getName());
         holder.description.setText(careProductList.get(position).getDescription());
         holder.price.setText(careProductList.get(position).getPrice());
@@ -47,7 +48,7 @@ public class CareProductAdapter extends RecyclerView.Adapter<CareProductAdapter.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(context, Product_details.class);
+                Intent i = new Intent(context, CareProduct_details.class);
 
                 i.putExtra("name", careProductList.get(position).getName());
                 i.putExtra("description", careProductList.get(position).getDescription());
@@ -71,12 +72,12 @@ public class CareProductAdapter extends RecyclerView.Adapter<CareProductAdapter.
         ImageView img;
         public CareProductViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.product_name);
-            description = itemView.findViewById(R.id.product_description);
-            price = itemView.findViewById(R.id.price);
-            pricebf = itemView.findViewById(R.id.price_before);
-            rate = itemView.findViewById(R.id.rate);
-            img = itemView.findViewById(R.id.img);
+            name = itemView.findViewById(R.id.product_name1);
+            description = itemView.findViewById(R.id.product_description1);
+            price = itemView.findViewById(R.id.price1);
+            pricebf = itemView.findViewById(R.id.price_before1);
+            rate = itemView.findViewById(R.id.rate1);
+            img = itemView.findViewById(R.id.img1);
 
         }
     }
