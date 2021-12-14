@@ -9,13 +9,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.b4u.adapter.CareProductAdapter;
 import com.example.b4u.adapter.CategoryAdapter;
 import com.example.b4u.adapter.ProductAdapter;
-import com.example.b4u.model.CareProduct;
 import com.example.b4u.model.Category;
 import com.example.b4u.model.Product;
 
@@ -58,10 +55,8 @@ public class FirstFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-    RecyclerView productCareView, categoryView,productView;
-    CareProductAdapter careProductAdapter;
+    RecyclerView categoryView,productView;
     CategoryAdapter categoryAdapter;
-    List<CareProduct> careProductList;
     List<Category> categoryList;
     ProductAdapter productAdapter;
     List<Product> productList;
@@ -81,20 +76,11 @@ public class FirstFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_first, container, false);
         //ProductCare
-        productCareView = v.findViewById(R.id.recyclerView1);
         categoryView = v.findViewById(R.id.recyclerView2);
         productView = v.findViewById(R.id.recyclerView3);
         //Adding Images to care list view
         //Vài bữa add i chang line 111->116
-        careProductList = new ArrayList<>();
-        careProductList.add((new CareProduct("Love for sale shadow palette","Description","Price","Price Before","5/5",R.drawable.product_1,R.drawable.product_1)));
-        careProductList.add(new CareProduct("Four-way shadow palette","Description","Price","Price Before","5/5",R.drawable.product_2,R.drawable.product_2));
-        careProductList.add(new CareProduct("La luce lip glaze","Description","Price","Price Before","Price Before",R.drawable.product_3,R.drawable.product_3));
-        careProductList.add(new CareProduct("Glam attack metallic crème","Description","Price","Price Before","5/5",R.drawable.product_4,R.drawable.product_4));
-        careProductList.add(new CareProduct("PhD hybrid lip oil","Description","Price","Price Before","5/5",R.drawable.product_5,R.drawable.product_5));
-        careProductList.add(new CareProduct("Le riot lip gloss","Description","Price","Price Before","5/5",R.drawable.product_6,R.drawable.product_6));
 
-        setcareproductRecycler(careProductList);
 
 
         //adding image to category
@@ -136,12 +122,6 @@ public class FirstFragment extends Fragment {
         return v;
     }
 
-    private void setcareproductRecycler(List<CareProduct> productcareDataList) {
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(),LinearLayoutManager.HORIZONTAL,false);
-        productCareView.setLayoutManager(layoutManager);
-        careProductAdapter = new CareProductAdapter(this.getContext(), productcareDataList);
-        productCareView.setAdapter(careProductAdapter);
-    }
     private void setcategoryRecycler(List<Category> categoryDataList) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(),LinearLayoutManager.HORIZONTAL,false);
         categoryView.setLayoutManager(layoutManager);

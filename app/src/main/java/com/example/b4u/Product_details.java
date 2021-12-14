@@ -31,12 +31,15 @@ public class Product_details extends AppCompatActivity {
         productrate = findViewById(R.id.productRate);
         img = findViewById(R.id.imageProduct);
         back = findViewById(R.id.back);
-
+        cart = findViewById(R.id.cart);
         productname.setText(name);
         productdes.setText(des);
         productprice.setText(price);
         productrate.setText(rate);
         img.setImageResource(image);
+        View decorView = getWindow().getDecorView();
+
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,8 +48,6 @@ public class Product_details extends AppCompatActivity {
                 finish();
             }
         });
-        View decorView = getWindow().getDecorView();
-        cart = findViewById(R.id.cart);
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

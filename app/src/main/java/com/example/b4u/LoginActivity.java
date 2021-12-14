@@ -37,6 +37,12 @@ public class LoginActivity extends AppCompatActivity {
         fcheckBox = findViewById(R.id.checkBox);
         firebaseAuth = FirebaseAuth.getInstance();
 
+        if(firebaseAuth.getCurrentUser() != null)
+        {
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            finish();
+        }
+
         fLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
