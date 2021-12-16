@@ -87,12 +87,15 @@ public class SecondFragment extends Fragment {
 
         //adding category
         allcategoryList = new ArrayList<>();
-        allcategoryList.add(new AllCategory(1,R.drawable.category_1,"Kem"));
-        allcategoryList.add(new AllCategory(2,R.drawable.category_2,"Kem"));
-        allcategoryList.add(new AllCategory(3,R.drawable.category_3,"Kem"));
-        allcategoryList.add(new AllCategory(4,R.drawable.category_4,"Kem"));
-        allcategoryList.add(new AllCategory(5,R.drawable.category_5,"Kem"));
-        allcategoryList.add(new AllCategory(6,R.drawable.category_6,"Kem"));
+        allcategoryList.add(new AllCategory(1,R.drawable.category_1,"Makeup"));
+        allcategoryList.add(new AllCategory(2,R.drawable.category_2,"Môi"));
+        allcategoryList.add(new AllCategory(3,R.drawable.category_3,"Nước hoa"));
+        allcategoryList.add(new AllCategory(4,R.drawable.category_4,"Chăm sóc da"));
+        allcategoryList.add(new AllCategory(5,R.drawable.category_5,"Chăm sóc tóc"));
+        allcategoryList.add(new AllCategory(6,R.drawable.category_6,"Chống nắng"));
+        allcategoryList.add(new AllCategory(6,R.drawable.category_7,"Mắt"));
+        allcategoryList.add(new AllCategory(6,R.drawable.category_8,"Dụng cụ"));
+        allcategoryList.add(new AllCategory(6,R.drawable.category_9,"Nails"));
         setallcategoryRecycler(allcategoryList);
         // Inflate the layout for this fragment
         //

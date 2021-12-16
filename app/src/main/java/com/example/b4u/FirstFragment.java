@@ -121,12 +121,12 @@ public class FirstFragment extends Fragment {
 
         //adding image to category
         categoryList = new ArrayList<>();
-        categoryList.add(new Category(1,R.drawable.category_1,"Lips"));
-        categoryList.add(new Category(2,R.drawable.category_2,"Eye"));
-        categoryList.add(new Category(3,R.drawable.category_3,"Body"));
-        categoryList.add(new Category(4,R.drawable.category_4,"Face"));
-        categoryList.add(new Category(5,R.drawable.category_5,"Skin"));
-        categoryList.add(new Category(6,R.drawable.category_6,"Perfume"));
+        categoryList.add(new Category(1,R.drawable.category_1,"Makeup"));
+        categoryList.add(new Category(2,R.drawable.category_2,"Môi"));
+        categoryList.add(new Category(3,R.drawable.category_3,"Nước hoa"));
+        categoryList.add(new Category(4,R.drawable.category_4,"Chăm sóc da"));
+        categoryList.add(new Category(5,R.drawable.category_5,"Chăm sóc tóc"));
+        categoryList.add(new Category(6,R.drawable.category_6,"Chống nắng"));
         setcategoryRecycler(categoryList);
 
         //adding product
