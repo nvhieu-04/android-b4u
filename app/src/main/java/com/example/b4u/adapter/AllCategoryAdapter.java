@@ -38,6 +38,8 @@ public class AllCategoryAdapter extends RecyclerView.Adapter<AllCategoryAdapter.
     public void onBindViewHolder(@NonNull AllCategoryViewHolder holder, int position) {
             holder.categoryImage.setImageResource(allcategoryList.get(position).getImageurl());
             holder.categoryName.setText(allcategoryList.get(position).getName());
+
+
     }
 
     @Override

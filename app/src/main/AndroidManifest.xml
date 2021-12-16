@@ -12,7 +12,6 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
-
         <activity
             android:name=".IntroActivity"
             android:exported="true" />

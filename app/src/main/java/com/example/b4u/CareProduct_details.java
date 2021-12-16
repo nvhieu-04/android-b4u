@@ -37,22 +37,22 @@ public class CareProduct_details extends AppCompatActivity {
         careproductprice.setText(careprice);
         careproductrate.setText(carerate);
         careimg.setImageResource(careimage);
-//        careback.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(CareProduct_details.this, MainActivity.class);
-//                startActivity(i);
-//                finish();
-//            }
-//        });
+        careback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(CareProduct_details.this, MainActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
         View decorView = getWindow().getDecorView();
         carecart = findViewById(R.id.carecart);
-//        carecart.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(CareProduct_details.this, cart_acitivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        carecart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CareProduct_details.this, cart_acitivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
