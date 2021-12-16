@@ -3,9 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".Product_details">
-
+    android:layout_height="match_parent">
     <Button
         android:id="@+id/button4"
         android:layout_width="170dp"
@@ -13,11 +11,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="65dp"
         android:text="Mua Ngay"
-        app:layout_constraintStart_toStartOf="@+id/imageProduct"
-        app:layout_constraintTop_toBottomOf="@+id/productRate" />
+        app:layout_constraintStart_toStartOf="@+id/careimageProduct"
+        app:layout_constraintTop_toBottomOf="@+id/careproductRate" />
 
     <ImageView
-        android:id="@+id/back"
+        android:id="@+id/careback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -27,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/cart"
+        android:id="@+id/carecart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -43,27 +41,27 @@
         android:fontFamily="@font/open_sans_bold"
         android:text="Chi Tiết Sản Phẩm"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/back"
-        app:layout_constraintEnd_toStartOf="@+id/cart"
-        app:layout_constraintStart_toEndOf="@+id/back"
-        app:layout_constraintTop_toTopOf="@+id/back" />
+        app:layout_constraintBottom_toBottomOf="@+id/careback"
+        app:layout_constraintEnd_toStartOf="@+id/carecart"
+        app:layout_constraintStart_toEndOf="@+id/careback"
+        app:layout_constraintTop_toTopOf="@+id/careback" />
 
     <ImageView
-        android:id="@+id/imageProduct"
+        android:id="@+id/careimageProduct"
         android:layout_width="372dp"
         android:layout_height="359dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="31dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="16dp"
+
+        android:layout_marginEnd="8dp"
         android:background="@drawable/border"
         android:src="@drawable/product_12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toBottomOf="@+id/back" />
+        app:layout_constraintTop_toBottomOf="@+id/careback" />
 
     <TextView
-        android:id="@+id/productName"
+        android:id="@+id/careproductName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
@@ -72,30 +70,30 @@
         android:text="TextView"
         android:textSize="26sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageProduct" />
+        app:layout_constraintTop_toBottomOf="@+id/careimageProduct" />
 
     <TextView
-        android:id="@+id/productDes"
+        android:id="@+id/careproductDes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="TextView"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/productName"
-        app:layout_constraintTop_toBottomOf="@+id/productName" />
+        app:layout_constraintStart_toStartOf="@+id/careproductName"
+        app:layout_constraintTop_toBottomOf="@+id/careproductName" />
 
     <TextView
-        android:id="@+id/productPrice"
+        android:id="@+id/careproductPrice"
         android:layout_width="77dp"
         android:layout_height="20dp"
         android:layout_marginTop="24dp"
         android:text="TextView"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/productDes"
-        app:layout_constraintTop_toBottomOf="@+id/productDes" />
+        app:layout_constraintStart_toStartOf="@+id/careproductDes"
+        app:layout_constraintTop_toBottomOf="@+id/careproductDes" />
 
     <TextView
-        android:id="@+id/productRate"
+        android:id="@+id/careproductRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
@@ -113,7 +111,7 @@
         android:layout_marginEnd="8dp"
         android:text="Thêm Vào Giỏ Hàng"
         app:layout_constraintBottom_toBottomOf="@+id/button4"
-        app:layout_constraintEnd_toEndOf="@+id/imageProduct"
+        app:layout_constraintEnd_toEndOf="@+id/careimageProduct"
         app:layout_constraintStart_toEndOf="@+id/button4"
         app:layout_constraintTop_toTopOf="@+id/button4" />
 
@@ -124,7 +122,8 @@
         android:layout_marginTop="24dp"
         android:text="Đánh giá: "
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/productPrice"
-        app:layout_constraintTop_toBottomOf="@+id/productPrice" />
+        app:layout_constraintStart_toStartOf="@+id/careproductPrice"
+        app:layout_constraintTop_toBottomOf="@+id/careproductPrice" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

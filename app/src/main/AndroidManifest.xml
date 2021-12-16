@@ -40,7 +40,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-
+        <activity android:name=".CareProduct_details"
+            android:exported="false"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

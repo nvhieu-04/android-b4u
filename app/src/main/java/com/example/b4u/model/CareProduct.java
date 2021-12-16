@@ -1,6 +1,6 @@
 package com.example.b4u.model;
 
-public class Product {
+public class CareProduct {
     String name;
     String description;
     String price;
@@ -9,15 +9,7 @@ public class Product {
     Integer imageUrl;
     Integer bigimageurl;
 
-    public int getBigimageurl() {
-        return bigimageurl;
-    }
-
-    public void setBigimageurl(int bigimageurl) {
-        this.bigimageurl = bigimageurl;
-    }
-
-    public Product(String name, String description, String price, String price_before, String rate, Integer imageUrl, Integer bigimageurl) {
+    public CareProduct(String name, String description, String price, String price_before, String rate, Integer imageUrl, Integer bigimageurl) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -73,5 +65,13 @@ public class Product {
 
     public void setImageUrl(Integer imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public Integer getBigimageurl() {
+        return bigimageurl;
+    }
+
+    public void setBigimageurl(Integer bigimageurl) {
+        this.bigimageurl = bigimageurl;
     }
 }

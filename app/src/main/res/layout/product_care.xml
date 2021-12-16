@@ -1,106 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/product_layout"
-    android:layout_width="230dp"
-    android:layout_height="320dp"
+    android:layout_width="260dp"
+    android:layout_height="360dp"
     android:layout_marginEnd="16dp"
+
     android:background="@drawable/border">
 
     <ImageView
-        android:id="@+id/img1"
-        android:layout_width="148dp"
-        android:layout_height="184dp"
-        android:layout_marginStart="41dp"
+        android:id="@+id/product_img"
+        android:layout_width="227dp"
+        android:layout_height="142dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="41dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/border"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/product_2" />
 
     <TextView
-        android:id="@+id/product_name1"
+        android:id="@+id/careproduct_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="72dp"
         android:fontFamily="@font/open_sans_semibold"
         android:text="product_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img1"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/product_img"
+        app:layout_constraintStart_toStartOf="@+id/product_img"
+        app:layout_constraintTop_toBottomOf="@+id/product_img"
         tools:textColor="#FF0000" />
 
     <TextView
-        android:id="@+id/product_description1"
+        android:id="@+id/careproduct_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="4dp"
-        android:text="product_description"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Thương Hiệu"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_name1" />
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/product_img"
+        app:layout_constraintTop_toBottomOf="@+id/careproduct_name" />
 
     <TextView
-        android:id="@+id/price1"
+        android:id="@+id/careprice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
-        android:text="price"
+        android:fontFamily="monospace"
+        android:text="Giá bán"
         android:textColor="#FF0000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/product_description1" />
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/careproduct_description"
+        app:layout_constraintTop_toBottomOf="@+id/careproduct_description" />
 
     <TextView
-        android:id="@+id/price_before1"
+        android:id="@+id/careprice_before"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="price before"
+        android:layout_marginTop="8dp"
+        android:fontFamily="monospace"
+        android:text="Gía bán trước đây"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/price1" />
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/careprice"
+        app:layout_constraintTop_toBottomOf="@+id/careprice" />
 
     <TextView
-        android:id="@+id/rate1"
+        android:id="@+id/carerate"
         android:layout_width="36dp"
         android:layout_height="24dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="4dp"
         android:fontFamily="@font/open_sans_bold"
-        android:text="rate"
+        android:text="bán được"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView9"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toTopOf="@+id/textView9" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/corner_with_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_exposure_plus" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="34dp"
-        android:layout_height="23dp"
-        android:layout_marginBottom="4dp"
-        android:outlineAmbientShadowColor="#FFE503"
-        android:outlineSpotShadowColor="#FBE30A"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rate1"
-        app:srcCompat="@drawable/ic_star" />
-
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Đã bán được: "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/careprice_before"
+        app:layout_constraintTop_toBottomOf="@+id/careprice_before" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 package com.example.b4u.adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -54,6 +53,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                 i.putExtra("price", productList.get(position).getPrice());
                 i.putExtra("pricebf", productList.get(position).getPrice_before());
                 i.putExtra("rate", productList.get(position).getRate());
+                i.putExtra("image",productList.get(position).getBigimageurl());
                 context.startActivity(i);
             }
         });
