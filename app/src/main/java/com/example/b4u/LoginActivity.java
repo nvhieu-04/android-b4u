@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         if(firebaseAuth.getCurrentUser() != null)
         {
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            overridePendingTransition(R.anim.anim_move_right,R.anim.anim_move_left);
             finish();
         }
 
@@ -77,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                         {
                             Toast.makeText(LoginActivity.this,"Chào mừng bạn quay trở lại. Chúc bạn một ngày tốt lành!",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            overridePendingTransition(R.anim.anim_move_right,R.anim.anim_move_left);
 
                         }
                         else {
@@ -90,6 +92,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),CreateAccountActivity.class));
+                overridePendingTransition(R.anim.anim_move_right,R.anim.anim_move_left);
             }
         });
         fForgetPassword.setOnClickListener(new View.OnClickListener() {

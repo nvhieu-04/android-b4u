@@ -1,59 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+
+    <ImageView
+        android:id="@+id/intro_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/intro_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="center"
+        android:text="Ngập Tràn Ưu Đãi Và Khuyến Mãi Siêu Khủng"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/intro_image" />
 
-        <RelativeLayout
-            android:id="@+id/image_layout"
-            android:layout_width="match_parent"
-            android:layout_height="570dp">
+    <Button
+        android:id="@+id/btnNext2"
+        android:layout_width="167dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="111dp"
+        android:layout_marginEnd="140dp"
+        android:text="Tiếp Theo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intro_image" />
 
-            <ImageView
-                android:id="@+id/intro_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:background="@drawable/intro_2" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_alignBottom="@+id/intro_image"
-                android:layout_marginBottom="25dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="59dp"
-                    android:gravity="center"
-                    android:text="Insane Gift &amp; Sale" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="32dp"
-                    android:gravity="center"
-                    android:text="alway sale, alway gift for you" />
-
-            </RelativeLayout>
-
-        </RelativeLayout>
+    <Button
+        android:id="@+id/btnSkip2"
+        android:layout_width="167dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="149dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="153dp"
+        android:text="Bỏ Qua"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNext2" />
 
 
-
-
-
-
-    </RelativeLayout>
-
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

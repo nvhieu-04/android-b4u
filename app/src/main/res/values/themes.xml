@@ -20,4 +20,10 @@
             @drawable/splash_screen
         </item>
     </style>
+    <style name="Theme.B4u.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.B4u.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.B4u.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

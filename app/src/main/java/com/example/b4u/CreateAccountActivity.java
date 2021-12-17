@@ -53,15 +53,12 @@ public class CreateAccountActivity extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
 
 
-        if(firebaseAuth.getCurrentUser() != null)
-        {
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            finish();
-        }
+
         fLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                overridePendingTransition(R.anim.anim_move_right,R.anim.anim_move_left);
             }
         });
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -121,6 +118,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                                 }
                             });
                             startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+
 
                         }
                         else {
