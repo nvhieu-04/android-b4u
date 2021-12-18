@@ -26,7 +26,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText fEmail,fPassword;
     TextView fCreateAccount,fForgetPassword;
     Button fLogin;
-    CheckBox fcheckBox;
     FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,6 @@ public class LoginActivity extends AppCompatActivity {
         fCreateAccount = findViewById(R.id.createAccount);
         fForgetPassword = findViewById(R.id.textForgetPassword);
         fLogin = findViewById(R.id.login_button);
-        fcheckBox = findViewById(R.id.checkBox);
         firebaseAuth = FirebaseAuth.getInstance();
 
         if(firebaseAuth.getCurrentUser() != null)
@@ -65,10 +63,6 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     fPassword.setError("Mật khẩu phải có trên 6 kí tự");
                     return;
-                }
-                if(!fcheckBox.isChecked())
-                {
-
                 }
 
                 firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

@@ -15,12 +15,13 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/intro_2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="296dp"
+        android:layout_height="57dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="32dp"
         android:layout_marginTop="300dp"
@@ -34,8 +35,8 @@
 
     <Button
         android:id="@+id/btnNext2"
-        android:layout_width="167dp"
-        android:layout_height="45dp"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
         android:layout_marginStart="139dp"
         android:layout_marginTop="111dp"
         android:layout_marginEnd="140dp"
@@ -46,8 +47,8 @@
 
     <Button
         android:id="@+id/btnSkip2"
-        android:layout_width="167dp"
-        android:layout_height="45dp"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
         android:layout_marginStart="149dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="153dp"
@@ -55,6 +56,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNext2" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intro_image"
+        app:srcCompat="@drawable/ic_baseline_circle" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView16"
+        app:layout_constraintStart_toEndOf="@+id/imageView13"
+        app:layout_constraintTop_toBottomOf="@+id/intro_image"
+        app:srcCompat="@drawable/ic_circle" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="132dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intro_image"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_baseline_circle" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

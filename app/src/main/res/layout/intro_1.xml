@@ -8,14 +8,14 @@
 
     <ImageView
         android:id="@+id/intro_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="298dp"
+        android:layout_height="495dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/intro_1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="368dp"
         android:layout_marginEnd="8dp"
         android:gravity="center"
         android:text="Mọi thứ bạn cần tất cả đều ở đây"
@@ -63,10 +63,10 @@
 
     <Button
         android:id="@+id/btnNext"
-        android:layout_width="167dp"
-        android:layout_height="45dp"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
         android:layout_marginStart="113dp"
-        android:layout_marginTop="111dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="114dp"
         android:text="Tiếp Theo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,8 +75,8 @@
 
     <Button
         android:id="@+id/btnSkip"
-        android:layout_width="167dp"
-        android:layout_height="45dp"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
         android:layout_marginStart="113dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="113dp"
@@ -84,5 +84,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNext" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intro_image"
+        app:srcCompat="@drawable/ic_circle" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView9"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/intro_image"
+        app:srcCompat="@drawable/ic_baseline_circle" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="132dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intro_image"
+        app:srcCompat="@drawable/ic_baseline_circle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

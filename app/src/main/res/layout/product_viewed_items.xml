@@ -24,9 +24,11 @@
 
     <TextView
         android:id="@+id/product_name"
+        android:singleLine="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:autoSizeTextType="none"
         android:fontFamily="@font/open_sans_semibold"
         android:text="product_name"
         android:textAlignment="center"

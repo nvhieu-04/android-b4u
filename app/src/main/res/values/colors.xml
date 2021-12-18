@@ -3,9 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#FFAFCC</color>
-    <color name="colorPrimaryDark">#FFAFCC</color>
-    <color name="colorAccent">#03DAC5</color>
-    <color name="colorPrimaryLight">#FFEFF5</color>
+    <color name="colorPrimaryDark">#C2185B</color>
+    <color name="colorAccent">#FFAFCC</color>
+    <color name="colorPrimaryLight">#FCE4EC</color>
     <color name="colorBackground">#E5E5E5</color>
     <color name="colorTrendingStart">#00B09B</color>
     <color name="colorTrendingEnd">#96C93D</color>

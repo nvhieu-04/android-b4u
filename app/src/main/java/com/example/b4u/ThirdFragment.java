@@ -3,16 +3,27 @@ package com.example.b4u;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,7 +62,11 @@ public class ThirdFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-    Button btn_SignOut;
+    Button btn_SignOut,btn_ChangeProfile,btn_Purchased, btn_Delivery, btn_About;
+    TextView fUser,fMail,fPhone,fBirth;
+    String userID;
+    FirebaseAuth firebaseAuth;
+    FirebaseFirestore firebaseFirestore;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,15 +82,61 @@ public class ThirdFragment extends Fragment {
         // Inflate the layout for this fragment
        View v = inflater.inflate(R.layout.fragment_third, container, false);
        btn_SignOut = v.findViewById(R.id.btnSignOut);
+       btn_ChangeProfile = v.findViewById(R.id.btnChangeProfile);
+       btn_Purchased = v.findViewById(R.id.btnPurchased);
+       btn_Delivery = v.findViewById(R.id.btnDelivery);
+       btn_About = v.findViewById(R.id.btnAbout);
+       fUser = v.findViewById(R.id.textNameUser);
+       fMail = v.findViewById(R.id.textMail);
+       fPhone = v.findViewById(R.id.textPhone);
+       fBirth = v.findViewById(R.id.textBirthday);
+       firebaseAuth = FirebaseAuth.getInstance();
+       firebaseFirestore = FirebaseFirestore.getInstance();
+       userID = firebaseAuth.getCurrentUser().getUid();
+       //Get information User
+        DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
+        documentReference.addSnapshotListener(getActivity(), new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                fUser.setText(documentSnapshot.getString("fName"));
+                fMail.setText(documentSnapshot.getString("fEmail"));
+                fPhone.setText(documentSnapshot.getString("fPhone"));
+                fBirth.setText(documentSnapshot.getString("fBirthDay"));
+            }
+        });
        btn_SignOut.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
                FirebaseAuth.getInstance().signOut();
-               Intent intent = new Intent(getActivity().getApplication(),LoginActivity.class);
-               startActivity(intent);
+               getActivity().finish();
+//               Intent intent = new Intent(getActivity().getApplication(),LoginActivity.class);
+//               startActivity(intent);
+
            }
        });
        return v;
+    }
+    ImageView home_btn,cart_btn;
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle  savedInstanceState)
+    {
+        super.onViewCreated(view,savedInstanceState);
+        NavController navController = Navigation.findNavController(view);
+        ImageView home_btn = view.findViewById(R.id.imageHome);
+        ImageView cart_btn = view.findViewById(R.id.imageCart);
+        home_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_thirdFragment_to_firstFragment);
+            }
+        });
+        cart_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_thirdFragment_to_fourthFragment);
+            }
+        });
+
     }
 
 }

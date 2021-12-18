@@ -23,9 +23,9 @@
         android:layout_width="276dp"
         android:layout_height="22dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:gravity="center"
         android:text="Bạn Đã Sẵn Sàng Với Chúng Tôi?"
         android:textSize="16sp"
@@ -38,9 +38,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="300dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:gravity="center"
         android:text="Giao Hàng Nhanh Chóng"
         android:textSize="16sp"
@@ -53,9 +53,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:gravity="center"
         android:text="Hỗ Trợ Khắp 63 Tỉnh Thành"
         android:textSize="16sp"
@@ -65,8 +65,8 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="167dp"
-        android:layout_height="45dp"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
         android:layout_marginStart="113dp"
         android:layout_marginTop="111dp"
         android:layout_marginEnd="113dp"
@@ -77,14 +77,46 @@
 
     <Button
         android:id="@+id/btnSignUp"
-        android:layout_width="167dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="114dp"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="113dp"
         android:text="Đăng Kí"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intro_image"
+        app:srcCompat="@drawable/ic_baseline_circle" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView15"
+        app:layout_constraintStart_toEndOf="@+id/imageView11"
+        app:layout_constraintTop_toBottomOf="@+id/intro_image"
+        app:srcCompat="@drawable/ic_baseline_circle" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="132dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intro_image"
+        app:srcCompat="@drawable/ic_circle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

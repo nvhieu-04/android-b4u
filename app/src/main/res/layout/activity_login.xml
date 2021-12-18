@@ -10,7 +10,9 @@
         android:id="@+id/intro_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -51,9 +53,8 @@
         android:id="@+id/editTextPassword"
         android:layout_width="228dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView3"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Mật khẩu"
         android:inputType="textPassword"
@@ -74,18 +75,6 @@
         app:layout_constraintTop_toTopOf="@+id/editTextPassword"
         app:srcCompat="@drawable/lock" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="146dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="24dp"
-        android:text="Nhớ tài khoản"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
-
     <TextView
         android:id="@+id/textForgetPassword"
         android:layout_width="wrap_content"
@@ -93,7 +82,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="40dp"
-        android:text="Quên tài khoản hoặc mật khẩu?"
+        android:text="Quên mật khẩu?"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/login_button"
         app:layout_constraintStart_toStartOf="@+id/login_button"
@@ -103,19 +92,22 @@
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/custom_button_login"
         android:text="Đăng Nhập"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/intro_image"
         app:layout_constraintStart_toStartOf="@+id/intro_image"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:text="Lần đầu tiên ở đây?"
         app:layout_constraintStart_toStartOf="@+id/login_button"
@@ -123,12 +115,12 @@
 
     <TextView
         android:id="@+id/createAccount"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="32dp"
-        android:text="Tạo tài khoản"
+        android:text=" Tạo tài khoản"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/login_button"
         app:layout_constraintStart_toEndOf="@+id/textView5"

@@ -6,8 +6,22 @@
     android:layout_height="match_parent"
     android:background="#FCFCFC"
 
-    android:backgroundTint="#0091EA"
+    android:backgroundTint="@color/colorDivider"
     tools:context=".ThirdFragment">
+
+    <TextView
+        android:id="@+id/textBirthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="Ngày Sinh"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/textNameUser" />
 
     <Button
         android:id="@+id/btnChangeProfile"
@@ -17,6 +31,7 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_background"
+        android:fontFamily="@font/open_sans_bold"
         android:text="THAY ĐỔI THÔNG TIN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,35 +41,35 @@
         android:id="@+id/textPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
         android:text="Số điện thoại"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textMail"
-        app:layout_constraintStart_toStartOf="@+id/textMail"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/imageView10"
         app:layout_constraintTop_toBottomOf="@+id/textMail" />
 
     <TextView
         android:id="@+id/textMail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
         android:text="Địa Chỉ Email"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textNameUser"
-        app:layout_constraintStart_toStartOf="@+id/textNameUser"
-        app:layout_constraintTop_toBottomOf="@+id/textNameUser" />
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/textBirthday" />
 
     <TextView
         android:id="@+id/textNameUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="68dp"
         android:text="Tên người dùng"
         android:textAlignment="center"
@@ -70,6 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:background="@drawable/button_background"
+        android:fontFamily="@font/open_sans_bold"
         android:text="Sản phẩm đã mua"
         app:layout_constraintEnd_toEndOf="@+id/btnChangeProfile"
         app:layout_constraintStart_toStartOf="@+id/btnChangeProfile"
@@ -81,6 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:background="@drawable/button_background"
+        android:fontFamily="@font/open_sans_bold"
         android:text="Đang Giao"
         app:layout_constraintEnd_toEndOf="@+id/btnPurchased"
         app:layout_constraintStart_toStartOf="@+id/btnPurchased"
@@ -92,6 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:background="@drawable/button_background"
+        android:fontFamily="@font/open_sans_bold"
         android:text="Về nhóm đồ án"
         app:layout_constraintEnd_toEndOf="@+id/btnDelivery"
         app:layout_constraintStart_toStartOf="@+id/btnDelivery"
@@ -103,6 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:background="@drawable/button_background"
+        android:fontFamily="@font/open_sans_bold"
         android:onClick="logout"
         android:text="Đăng Xuất"
         app:layout_constraintEnd_toEndOf="@+id/btnAbout"
@@ -144,12 +163,14 @@
 
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="109dp"
-        android:layout_height="104dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="89dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="68dp"
         android:src="@drawable/avt_user"
-        app:layout_constraintStart_toStartOf="@+id/imageHome"
+        app:layout_constraintEnd_toStartOf="@+id/textViewProfile"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/btnChangeProfile"
         app:layout_constraintTop_toBottomOf="@+id/textViewProfile" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

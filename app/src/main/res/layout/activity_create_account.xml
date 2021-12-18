@@ -6,6 +6,20 @@
     android:layout_height="match_parent">
 
 
+    <EditText
+        android:id="@+id/editTextBirth"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Ngày Sinh"
+        android:inputType="date|number"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
+        app:layout_constraintStart_toStartOf="@+id/editTextPhone"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -13,20 +27,23 @@
         android:layout_alignTop="@+id/editTextEmail"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
         app:layout_constraintBottom_toBottomOf="@+id/editTextEmail"
         app:layout_constraintEnd_toStartOf="@+id/editTextEmail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/editTextEmail"
-        app:layout_constraintVertical_bias="0.571"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/mail" />
 
     <ImageView
         android:id="@+id/intro_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="60dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -52,6 +69,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="4dp"
         app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName"
         app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
@@ -80,9 +99,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
-        android:hint="Phone"
+        android:hint="Số Điện Thoại"
         android:inputType="number"
         android:textColor="@color/silver"
         app:layout_constraintEnd_toEndOf="@+id/editTextEmail"
@@ -96,6 +115,8 @@
         android:layout_alignTop="@+id/editTextEmail"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="4dp"
         app:layout_constraintBottom_toBottomOf="@+id/editTextPhone"
         app:layout_constraintEnd_toStartOf="@+id/editTextPhone"
         app:layout_constraintStart_toStartOf="parent"
@@ -108,20 +129,21 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
         android:hint="Mật Khẩu"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextPhone"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextBirth"
+        app:layout_constraintStart_toStartOf="@+id/editTextBirth"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBirth" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="35dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="4dp"
         android:layout_toStartOf="@+id/editTextPassword"
         app:layout_constraintBottom_toBottomOf="@+id/editTextConfirmPassword"
         app:layout_constraintEnd_toStartOf="@+id/editTextConfirmPassword"
@@ -135,7 +157,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
         android:hint="Nhập lại mật khẩu"
         android:inputType="textPassword"
@@ -149,6 +171,8 @@
         android:layout_width="35dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="4dp"
         android:layout_toStartOf="@+id/editTextConfirmPassword"
         app:layout_constraintBottom_toBottomOf="@+id/editTextPassword"
         app:layout_constraintEnd_toStartOf="@+id/editTextPassword"
@@ -215,6 +239,18 @@
         app:layout_constraintEnd_toEndOf="@+id/textForgetPassword"
         app:layout_constraintStart_toStartOf="@+id/checkBox"
         app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="34dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextBirth"
+        app:layout_constraintEnd_toStartOf="@+id/editTextBirth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextBirth"
+        app:srcCompat="@drawable/birthday_icon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
