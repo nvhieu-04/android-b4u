@@ -5,9 +5,13 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -99,28 +103,29 @@ public class SecondFragment extends Fragment {
         setallcategoryRecycler(allcategoryList);
         // Inflate the layout for this fragment
         //
-        ImageView back_btn = v.findViewById(R.id.back);
-        ImageView cart_btn = v.findViewById(R.id.cart);
+
+
+        return v;
+    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle  savedInstanceState)
+    {
+        super.onViewCreated(view,savedInstanceState);
+        NavController navController = Navigation.findNavController(view);
+        ImageView back_btn = view.findViewById(R.id.back);
+        ImageView cart_btn = view.findViewById(R.id.cart);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),MainActivity.class);
-                startActivity(intent);
+                navController.navigate(R.id.action_secondFragment_to_firstFragment);
             }
         });
         cart_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FourthFragment nextFrag= new FourthFragment();
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(((ViewGroup)getView().getParent()).getId(), nextFrag, "findThisFragment")
-                        .addToBackStack(null)
-                        .commit();
+                navController.navigate(R.id.action_secondFragment_to_fourthFragment);
             }
         });
-        return v;
-
-
 
     }
     private void setallcategoryRecycler(List<AllCategory> allcategoryDataList) {
