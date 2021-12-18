@@ -4,20 +4,141 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorDivider"
-    tools:context=".UpdateProfile">
+    android:background="@color/colorBackground"
+    tools:context=".UpdateProfile"
+    tools:layout_editor_absoluteX="15dp"
+    tools:layout_editor_absoluteY="3dp">
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="34dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextBirth2"
+        app:layout_constraintEnd_toStartOf="@+id/editTextBirth2"
+        app:layout_constraintTop_toTopOf="@+id/editTextBirth2"
+        app:srcCompat="@drawable/birthday_icon" />
+
+    <EditText
+        android:id="@+id/editTextBirth2"
+        android:layout_width="270dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Ngày Sinh"
+        android:inputType="date|number"
+        android:textColor="@color/black"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPhone2"
+        app:layout_constraintStart_toStartOf="@+id/editTextPhone2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone2" />
+
+    <ImageView
+        android:id="@+id/imageView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/editTextPhone2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextPhone2"
+        app:layout_constraintEnd_toStartOf="@+id/editTextPhone2"
+        app:layout_constraintTop_toTopOf="@+id/editTextPhone2"
+        app:srcCompat="@drawable/mail" />
+
+    <EditText
+        android:id="@+id/editTextPhone2"
+        android:layout_width="270dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Số Điện Thoại"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="270dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="61dp"
+        android:hint="Họ và Tên"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/imageView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName2"
+        app:srcCompat="@drawable/human" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="174dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
         android:text="Thay Đổi Thông Tin"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintBottom_toBottomOf="@+id/backButton"
+        app:layout_constraintEnd_toStartOf="@+id/userButton"
+        app:layout_constraintStart_toEndOf="@+id/backButton"
+        app:layout_constraintTop_toTopOf="@+id/backButton"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="31dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
+    <ImageView
+        android:id="@+id/userButton"
+        android:layout_width="30dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        app:srcCompat="@drawable/avt_user" />
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="8dp"
+        android:text="Cập Nhật Lại Thông Tin"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/editTextBirth2"
+        app:layout_constraintStart_toStartOf="@+id/imageView27"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBirth2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
