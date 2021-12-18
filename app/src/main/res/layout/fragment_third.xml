@@ -53,6 +53,7 @@
         android:id="@+id/btnPurchased"
         android:layout_width="145dp"
         android:layout_height="145dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_background"
@@ -61,6 +62,7 @@
         android:text="Đã mua"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnDelivery"
         app:layout_constraintTop_toBottomOf="@+id/imageView17" />
 
     <Button
@@ -97,63 +99,66 @@
 
     <ImageView
         android:id="@+id/imageView24"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:src="@drawable/box_rectangle_profile"
         app:layout_constraintBottom_toBottomOf="@+id/imageView17"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView17"
-        app:layout_constraintVertical_bias="0.638" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewProfile" />
 
     <ImageView
         android:id="@+id/imageView19"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
         android:src="@drawable/ic_cake"
+        app:layout_constraintBottom_toBottomOf="@+id/textBirthday"
         app:layout_constraintEnd_toStartOf="@+id/textBirthday"
-        app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/textViewProfile" />
+        app:layout_constraintTop_toTopOf="@+id/textBirthday" />
 
     <TextView
         android:id="@+id/textNameUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="213dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="48dp"
         android:text="Tên người dùng"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="#000000"
-        android:textSize="25sp"
+        android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textBirthday"
         app:layout_constraintTop_toBottomOf="@+id/textViewProfile" />
 
     <TextView
         android:id="@+id/textMail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
         android:text="Địa Chỉ Email"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="normal"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintStart_toStartOf="@+id/textBirthday"
         app:layout_constraintTop_toBottomOf="@+id/textBirthday" />
 
     <ImageView
         android:id="@+id/imageView20"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="8dp"
         android:src="@drawable/ic_baseline_mail"
+        app:layout_constraintBottom_toBottomOf="@+id/textMail"
         app:layout_constraintEnd_toStartOf="@+id/textMail"
-        app:layout_constraintTop_toBottomOf="@+id/imageView19" />
+        app:layout_constraintTop_toTopOf="@+id/textMail" />
 
     <TextView
         android:id="@+id/textBirthday"
@@ -173,25 +178,24 @@
         android:id="@+id/textPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="12dp"
         android:text="Số điện thoại"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="normal"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintStart_toStartOf="@+id/textMail"
         app:layout_constraintTop_toBottomOf="@+id/textMail" />
 
     <ImageView
         android:id="@+id/imageView21"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="8dp"
         android:src="@drawable/ic_phone"
+        app:layout_constraintBottom_toBottomOf="@+id/textPhone"
         app:layout_constraintEnd_toStartOf="@+id/textPhone"
-        app:layout_constraintTop_toBottomOf="@+id/imageView20" />
+        app:layout_constraintTop_toTopOf="@+id/textPhone" />
 
     <TextView
         android:id="@+id/textViewProfile"
@@ -231,7 +235,7 @@
         android:layout_width="89dp"
         android:layout_height="84dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="88dp"
         android:src="@drawable/avt_user"
         app:layout_constraintEnd_toStartOf="@+id/textViewProfile"
         app:layout_constraintHorizontal_bias="1.0"
