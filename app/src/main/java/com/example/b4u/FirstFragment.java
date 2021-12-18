@@ -2,11 +2,8 @@ package com.example.b4u;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -96,7 +93,6 @@ public class FirstFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_first, container, false);
-
         //ProductCare
         productCareView = v.findViewById(R.id.recyclerView1);
         categoryView = v.findViewById(R.id.recyclerView2);
@@ -118,8 +114,17 @@ public class FirstFragment extends Fragment {
         //Adding Images to care list view
         //Vài bữa add i chang line 111->116
         careProductList = new ArrayList<>();
-        careProductList.add(new CareProduct("Love for sale shadow palette","Thương Hiệu","Gíá BÁN","Gía bán trước đây","Bao nhiêu người mua",R.drawable.product_1,R.drawable.product_1));
-
+        //careProductList.add(new CareProduct("Love for sale shadow palette","Thương Hiệu","Gíá BÁN","Gía bán trước đây","Bao nhiêu người mua",R.drawable.product_1,R.drawable.product_1));
+        careProductList.add(new CareProduct("LOVE FOR SALE SHADOW PALETTE","Haus Laboratories","1,103,160đ","The most anticipated palette of the season is here. HAUS LABS proudly presents LOVE FOR SALE — a new + limited edition shadow palette featuring 18 high performance, soul-stirring shades in a range of velvety mattes, lustrous shimmers, multidimensional metallics and an all-over sparkle topper – inviting you to get back to glam with our most innovative formulas yet.","2103",R.drawable.product_1,R.drawable.product_1));
+        careProductList.add(new CareProduct("LE RIOT LIP GLOSS-Plaze","Haus Laboratories","413,685đ","This extreme high-shine gel gloss amplifies any look. Comfortable enough to not weigh you down, reflective enough to celebrate yourself with a shimmer, sparkle or true shine finish.","4136",R.drawable.product_6,R.drawable.product_6));
+        careProductList.add(new CareProduct("RIP LIP LINER-Slayer","Haus Laboratories","386,000đ","This creamy, high-pigment lip pencil balances precision with one-stroke, demi-matte payoff to slay your lip look every time. The comfortable, longwearing formula was made to outline with ease or fill in for all over color.","2003",R.drawable.product_14,R.drawable.product_14));
+        careProductList.add(new CareProduct("Butter Gloss, Non-Sticky Lip Gloss - Tiramisu","NYX","114,223đđ","Butter Gloss: Buttery soft and silky smooth, our decadent Butter Gloss is available in a wide variety of sumptuous shades; Each glossy color delivers sheer to medium coverage that melts onto your lips","5103",R.drawable.product_15,R.drawable.product_15));
+        careProductList.add(new CareProduct("Original Volume Building Mascara, Carbon Black","L’Oreal Paris","312,500đ","Voluminous Mascara is uniquely formulated to resist clumping, soften and build lashes up to 5X their natural thickness; The Volume Maximizing Brush thickens lashes evenly and smoothly; Suitable for sensitive eyes and contact lens wearers","3000",R.drawable.product_16,R.drawable.product_16));
+        careProductList.add(new CareProduct("WALNUT FACE SCRUB","Kylie Skin","505,615đ","Gently exfoliates, helps remove dead skin cells and refine skins texture. Walnut Powder and a Botanical Blend of Fruit Extracts: Help to gently smooth skin. Squalane and Sodium Hyaluronate: Moisturizing agents that help reinforce the skin’s natural moisture.","2103",R.drawable.product_11,R.drawable.product_11));
+        careProductList.add(new CareProduct("Lash Blast Volume Mascara, Brown","Cover Girl","142,491đ","Designed to max out every lash, Lash Blast Volume Mascara creates ten times more volume instantly. Instant blast of fullness and length.","4506",R.drawable.product_19,R.drawable.product_19));
+        careProductList.add(new CareProduct("TruBlend Matte Made Liquid Foundation, Sun Beige","Cover Girl","144,789đ","Comfortable matte foundation gives you that flawless-looking finish. Mattifying powders absorb excess oil and minimize the appearance of your pores for a smooth, polished look.","2901",R.drawable.product_20,R.drawable.product_20));
+        careProductList.add(new CareProduct("Rimmel Stay Matte Foundation Soft Beige","Rimmel Store","54,238đ","Stay matte, stop shine: This liquid mousse blends flawlessly to even out skin tone and stop shine for hours; With a natural looking yet photo ready finish, your face will look practically poreless and baby soft all day long; Prepare for matte perfection.","4403",R.drawable.product_21,R.drawable.product_21));
+        careProductList.add(new CareProduct("Photo Focus Foundation, Soft Beige","wet n wild","62,512đ","Our high-performing, skin-perfecting foundation is formulated with a matte, light-diffusing complex to help prevent white cast in photos & deliver a radiant-looking complexion.","4826",R.drawable.product_22,R.drawable.product_22));
         //
         setcareproductRecycler(careProductList);
 
@@ -144,26 +149,22 @@ public class FirstFragment extends Fragment {
         setproductRecycler(productList);
 
         
-
+        ImageView user = v.findViewById(R.id.imageUser);
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ThirdFragment nextFrag= new ThirdFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(((ViewGroup)getView().getParent()).getId(), nextFrag, "findThisFragment")
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
 
 
 
         // Inflate the layout for this fragment
         return v;
-    }
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle  savedInstanceState)
-    {
-        super.onViewCreated(view,savedInstanceState);
-        NavController navController = Navigation.findNavController(view);
-        ImageView user = view.findViewById(R.id.imageUser);
-        user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.action_firstFragment_to_thirdFragment);
-            }
-        });
-
     }
     private void setcareproductRecycler(List<CareProduct> productcareDataList) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(),LinearLayoutManager.HORIZONTAL,false);
