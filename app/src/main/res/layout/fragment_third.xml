@@ -6,71 +6,121 @@
     android:layout_height="match_parent"
     android:background="#FCFCFC"
 
-    android:backgroundTint="@color/colorDivider"
+    android:backgroundTint="@color/white"
     tools:context=".ThirdFragment">
 
-    <TextView
-        android:id="@+id/textBirthday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:text="Ngày Sinh"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/textNameUser" />
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/header_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <Button
         android:id="@+id/btnChangeProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="204dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_background"
         android:fontFamily="@font/open_sans_bold"
         android:text="THAY ĐỔI THÔNG TIN"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+
+    <Button
+        android:id="@+id/btnAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button_background"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Về nhóm đồ án"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/btnChangeProfile"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnChangeProfile"
+        app:layout_constraintTop_toBottomOf="@+id/btnChangeProfile" />
+
+    <Button
+        android:id="@+id/btnPurchased"
+        android:layout_width="145dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="56dp"
+        android:background="@drawable/button_background"
+        android:drawableTop="@drawable/iconshiped100px"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Đã mua"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+
+    <Button
+        android:id="@+id/btnDelivery"
+        android:layout_width="145dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_background"
+        android:drawableTop="@drawable/artboard_1100px"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="Đang Giao"
+        android:textColor="@color/black"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+
+    <Button
+        android:id="@+id/btnSignOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button_background"
+        android:fontFamily="@font/open_sans_bold"
+        android:onClick="logout"
+        android:text="Đăng Xuất"
+        app:layout_constraintEnd_toEndOf="@+id/btnAbout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnAbout"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/btnAbout" />
+
+    <ImageView
+        android:id="@+id/imageView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/box_rectangle_profile"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView17"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPhone" />
+        app:layout_constraintTop_toTopOf="@+id/imageView17"
+        app:layout_constraintVertical_bias="0.638" />
 
-    <TextView
-        android:id="@+id/textPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:text="Số điện thoại"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="normal"
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="72dp"
+        android:src="@drawable/ic_cake"
+        app:layout_constraintEnd_toStartOf="@+id/textBirthday"
+        app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/textMail" />
-
-    <TextView
-        android:id="@+id/textMail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:text="Địa Chỉ Email"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/textBirthday" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewProfile" />
 
     <TextView
         android:id="@+id/textNameUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="32dp"
         android:text="Tên người dùng"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -79,54 +129,67 @@
         app:layout_constraintStart_toEndOf="@+id/imageView10"
         app:layout_constraintTop_toBottomOf="@+id/textViewProfile" />
 
-    <Button
-        android:id="@+id/btnPurchased"
+    <TextView
+        android:id="@+id/textMail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/button_background"
-        android:fontFamily="@font/open_sans_bold"
-        android:text="Sản phẩm đã mua"
-        app:layout_constraintEnd_toEndOf="@+id/btnChangeProfile"
-        app:layout_constraintStart_toStartOf="@+id/btnChangeProfile"
-        app:layout_constraintTop_toBottomOf="@+id/btnChangeProfile" />
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:text="Địa Chỉ Email"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/textBirthday" />
 
-    <Button
-        android:id="@+id/btnDelivery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/button_background"
-        android:fontFamily="@font/open_sans_bold"
-        android:text="Đang Giao"
-        app:layout_constraintEnd_toEndOf="@+id/btnPurchased"
-        app:layout_constraintStart_toStartOf="@+id/btnPurchased"
-        app:layout_constraintTop_toBottomOf="@+id/btnPurchased" />
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_baseline_mail"
+        app:layout_constraintEnd_toStartOf="@+id/textMail"
+        app:layout_constraintTop_toBottomOf="@+id/imageView19" />
 
-    <Button
-        android:id="@+id/btnAbout"
+    <TextView
+        android:id="@+id/textBirthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/button_background"
-        android:fontFamily="@font/open_sans_bold"
-        android:text="Về nhóm đồ án"
-        app:layout_constraintEnd_toEndOf="@+id/btnDelivery"
-        app:layout_constraintStart_toStartOf="@+id/btnDelivery"
-        app:layout_constraintTop_toBottomOf="@+id/btnDelivery" />
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:text="Ngày Sinh"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/textNameUser" />
 
-    <Button
-        android:id="@+id/btnSignOut"
+    <TextView
+        android:id="@+id/textPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/button_background"
-        android:fontFamily="@font/open_sans_bold"
-        android:onClick="logout"
-        android:text="Đăng Xuất"
-        app:layout_constraintEnd_toEndOf="@+id/btnAbout"
-        app:layout_constraintStart_toStartOf="@+id/btnAbout"
-        app:layout_constraintTop_toBottomOf="@+id/btnAbout" />
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="12dp"
+        android:text="Số điện thoại"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/textMail" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_phone"
+        app:layout_constraintEnd_toStartOf="@+id/textPhone"
+        app:layout_constraintTop_toBottomOf="@+id/imageView20" />
 
     <TextView
         android:id="@+id/textViewProfile"
@@ -166,10 +229,10 @@
         android:layout_width="89dp"
         android:layout_height="84dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="44dp"
         android:src="@drawable/avt_user"
         app:layout_constraintEnd_toStartOf="@+id/textViewProfile"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/btnChangeProfile"
         app:layout_constraintTop_toBottomOf="@+id/textViewProfile" />
 
