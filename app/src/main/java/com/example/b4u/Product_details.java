@@ -9,10 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Product_details extends AppCompatActivity {
-    String name,des,price,rate;
+    String name,des,price,rate,description;
     int image;
     ImageView img,back,cart;
-    TextView productname,productdes, productprice, productrate;
+    TextView productname,productdes, productprice, productrate,productdescription;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,11 +24,12 @@ public class Product_details extends AppCompatActivity {
         price = i.getStringExtra("price");
         rate = i.getStringExtra("rate");
         image = i.getIntExtra("image",R.drawable.product_1);
-
+        description = i.getStringExtra("pricebf");
         productname = findViewById(R.id.productName);
         productdes = findViewById(R.id.productDes);
         productprice = findViewById(R.id.productPrice);
         productrate = findViewById(R.id.productRate);
+        productdescription= findViewById(R.id.textViewDescription);
         img = findViewById(R.id.imageProduct);
         back = findViewById(R.id.back);
         cart = findViewById(R.id.cart);
@@ -37,6 +38,7 @@ public class Product_details extends AppCompatActivity {
         productprice.setText(price);
         productrate.setText(rate);
         img.setImageResource(image);
+        productdescription.setText(description);
         View decorView = getWindow().getDecorView();
 
 

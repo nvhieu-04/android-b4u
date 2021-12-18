@@ -9,10 +9,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CareProduct_details extends AppCompatActivity {
-    String carename,caredes,careprice,carerate;
+    String carename,caredes,careprice,carerate,caredescription;
     int careimage;
     ImageView careimg,careback,carecart;
-    TextView careproductname,careproductdes, careproductprice, careproductrate;
+    TextView careproductname,careproductdes, careproductprice, careproductrate, carediscription;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,14 +24,15 @@ public class CareProduct_details extends AppCompatActivity {
         careprice = i.getStringExtra("careprice");
         carerate = i.getStringExtra("carerate");
         careimage = i.getIntExtra("careimage",R.drawable.product_1);
-
+        caredescription = i.getStringExtra("carepricebf");
         careproductname = findViewById(R.id.careproductName);
         careproductdes = findViewById(R.id.careproductDes);
         careproductprice = findViewById(R.id.careproductPrice);
         careproductrate = findViewById(R.id.careproductRate);
+        carediscription = findViewById(R.id.textViewcareDescription);
         careimg = findViewById(R.id.careimageProduct);
         careback = findViewById(R.id.careback);
-
+        carediscription.setText(caredescription);
         careproductname.setText(carename);
         careproductdes.setText(caredes);
         careproductprice.setText(careprice);

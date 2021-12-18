@@ -2,8 +2,11 @@ package com.example.b4u;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -157,23 +160,24 @@ public class FirstFragment extends Fragment {
         productList.add(new Product("Photo Focus Foundation, Soft Beige","wet n wild","62,512đ","Our high-performing, skin-perfecting foundation is formulated with a matte, light-diffusing complex to help prevent white cast in photos & deliver a radiant-looking complexion.","4/5 (4826 đánh giá)",R.drawable.product_22,R.drawable.product_22));
         setproductRecycler(productList);
 
-        
-        ImageView user = v.findViewById(R.id.imageUser);
-        user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ThirdFragment nextFrag= new ThirdFragment();
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(((ViewGroup)getView().getParent()).getId(), nextFrag, "findThisFragment")
-                        .addToBackStack(null)
-                        .commit();
-            }
-        });
 
 
 
         // Inflate the layout for this fragment
         return v;
+    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle  savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        NavController navController = Navigation.findNavController(view);
+        ImageView user = view.findViewById(R.id.imageUser);
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_firstFragment_to_thirdFragment);
+            }
+        });
+
     }
     private void setcareproductRecycler(List<CareProduct> productcareDataList) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getContext(),LinearLayoutManager.HORIZONTAL,false);
