@@ -2,13 +2,18 @@ package com.example.b4u;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,6 +67,28 @@ public class FourthFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_fourth, container, false);
+    }
+    ImageView home_btn,user_btn;
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle  savedInstanceState)
+    {
+        super.onViewCreated(view,savedInstanceState);
+        NavController navController = Navigation.findNavController(view);
+        ImageView home_btn = view.findViewById(R.id.btnHomeF);
+        ImageView user_btn = view.findViewById(R.id.btnUserf);
+        home_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_fourthFragment_to_firstFragment);
+            }
+        });
+        user_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_fourthFragment_to_thirdFragment);
+            }
+        });
+
     }
 
 }

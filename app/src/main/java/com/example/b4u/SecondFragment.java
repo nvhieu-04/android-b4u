@@ -97,9 +97,9 @@ public class SecondFragment extends Fragment {
         allcategoryList.add(new AllCategory(4,R.drawable.category_4,"Chăm sóc da"));
         allcategoryList.add(new AllCategory(5,R.drawable.category_5,"Chăm sóc tóc"));
         allcategoryList.add(new AllCategory(6,R.drawable.category_6,"Chống nắng"));
-        allcategoryList.add(new AllCategory(6,R.drawable.category_7,"Mắt"));
-        allcategoryList.add(new AllCategory(6,R.drawable.category_8,"Dụng cụ"));
-        allcategoryList.add(new AllCategory(6,R.drawable.category_9,"Nails"));
+        allcategoryList.add(new AllCategory(7,R.drawable.category_7,"Mắt"));
+        allcategoryList.add(new AllCategory(8,R.drawable.category_8,"Dụng cụ"));
+        allcategoryList.add(new AllCategory(9,R.drawable.category_9,"Nails"));
         setallcategoryRecycler(allcategoryList);
         // Inflate the layout for this fragment
         //

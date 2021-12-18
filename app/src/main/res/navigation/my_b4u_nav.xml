@@ -48,5 +48,12 @@
         android:id="@+id/fourthFragment"
         android:name="com.example.b4u.FourthFragment"
         android:label="Cart"
-        tools:layout="@layout/fragment_fourth" />
+        tools:layout="@layout/fragment_fourth" >
+        <action
+            android:id="@+id/action_fourthFragment_to_firstFragment"
+            app:destination="@id/firstFragment" />
+        <action
+            android:id="@+id/action_fourthFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
+    </fragment>
 </navigation>
