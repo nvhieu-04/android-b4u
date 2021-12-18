@@ -109,9 +109,13 @@ public class ThirdFragment extends Fragment {
            public void onClick(View view) {
                FirebaseAuth.getInstance().signOut();
                getActivity().finish();
-//               Intent intent = new Intent(getActivity().getApplication(),LoginActivity.class);
-//               startActivity(intent);
-
+           }
+       });
+       btn_ChangeProfile.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent = new Intent(getActivity().getApplication(),UpdateProfile.class);
+               startActivity(intent);
            }
        });
        return v;
