@@ -15,6 +15,9 @@
             android:name=".AboutUs"
             android:exported="false" />
         <activity
+            android:name=".Purchased"
+            android:exported="false" />
+        <activity
             android:name=".UpdateProfile"
             android:exported="false" />
         <activity

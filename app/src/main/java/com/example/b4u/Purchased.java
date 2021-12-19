@@ -1,5 +1,6 @@
 package com.example.b4u;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,13 +11,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+
+import java.util.HashMap;
 
 public class Purchased extends AppCompatActivity {
     Button buttonPurchased;
@@ -30,6 +38,7 @@ public class Purchased extends AppCompatActivity {
     ImageView imgProuct;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
+    DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +46,7 @@ public class Purchased extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
         userID = firebaseAuth.getCurrentUser().getUid();
+        reference = FirebaseDatabase.getInstance().getReference().child("users");
         Intent i = getIntent();
         fname = i.getStringExtra("name");
         fPrice = i.getStringExtra("price");
@@ -73,11 +83,37 @@ public class Purchased extends AppCompatActivity {
                 address.setText(documentSnapshot.getString("fAddress"));
             }
         });
-
+        String getName = name.getText().toString().trim();
+        String getPhone = phone.getText().toString().trim();
+        String getAdd = address.getText().toString().trim();
+        String timestamps = ""+System.currentTimeMillis();
         buttonPurchased.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                HashMap<String,Object> data = new HashMap<>();
+                data.put("NameProduct",fname);
+                data.put("PriceProduct",""+fPrice);
+                data.put("QuantityProduct",""+fQuantity);
+                data.put("TotalPrice",""+total);
+                data.put("Name", getName);
+                data.put("Phone",getPhone);
+                data.put("Address",getAdd);
+                data.put("Time",timestamps);
+
+                reference.child(firebaseAuth.getUid()).child("Purchased").child(timestamps).setValue(data)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(Purchased.this,"Đã Đặt Hàng Thành Công",Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(Purchased.this,MainActivity.class));
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Purchased.this,"Thất Bại",Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 

@@ -135,7 +135,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                         {
                             Toast.makeText(CreateAccountActivity.this,"Đã tạo tài khoản thành công",Toast.LENGTH_SHORT).show();
                             userID = firebaseAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = firebaseFirestore.collection("user").document(userID);
+                            DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
                             Map<String,Object> user = new HashMap<>();
                             user.put("fName",name);
                             user.put("fEmail",email);
