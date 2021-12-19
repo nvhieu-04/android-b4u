@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,7 +25,7 @@ public class Purchased extends AppCompatActivity {
     String userID;
     String fname,fPrice;
     int fQuantity;
-    int image;
+    int image,priceProductInt;
     int ship = 350000;
     ImageView imgProuct;
     FirebaseAuth firebaseAuth;
@@ -57,6 +58,11 @@ public class Purchased extends AppCompatActivity {
         priceProduct.setText("Đơn Gía: "+fPrice+" VNĐ");
         productDelivery.setText(String.valueOf(ship)+ " VNĐ");
 
+        //Tính tổng tiền sản phẩm
+        priceProductInt = Integer.parseInt(fPrice);
+        int total = (priceProductInt * fQuantity) + ship;
+        productTotal.setText(String.valueOf(total)+" VNĐ");
+
         //Get Information User
         DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -65,6 +71,13 @@ public class Purchased extends AppCompatActivity {
                 name.setText(documentSnapshot.getString("fName"));
                 phone.setText(documentSnapshot.getString("fPhone"));
                 address.setText(documentSnapshot.getString("fAddress"));
+            }
+        });
+
+        buttonPurchased.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 
