@@ -118,6 +118,13 @@ public class ThirdFragment extends Fragment {
                startActivity(intent);
            }
        });
+        btn_About.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity().getApplication(),AboutUs.class);
+                startActivity(intent);
+            }
+        });
        return v;
     }
     ImageView home_btn,cart_btn;

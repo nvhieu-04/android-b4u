@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.B4u">
         <activity
-            android:name=".Purchased"
+            android:name=".AboutUs"
             android:exported="false" />
         <activity
             android:name=".UpdateProfile"
