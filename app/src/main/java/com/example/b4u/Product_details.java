@@ -39,6 +39,8 @@ public class Product_details extends AppCompatActivity {
         plus = findViewById(R.id.image_plus);
         minus = findViewById(R.id.img_minus);
         quantity = findViewById(R.id.textQuantity);
+        btnBuyNow = findViewById(R.id.buttonBuyNow);
+        btnAddCart = findViewById(R.id.buttonAddCart);
         productname.setText(name);
         productdes.setText(des);
         productprice.setText(price);
@@ -81,7 +83,17 @@ public class Product_details extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        btnBuyNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Product_details.this,Purchased.class);
+                intent.putExtra("name",name);
+                intent.putExtra("price",price);
+                intent.putExtra("image",image);
+                intent.putExtra("quantity",totalQuantity);
+                startActivity(intent);
+            }
+        });
 
 
 

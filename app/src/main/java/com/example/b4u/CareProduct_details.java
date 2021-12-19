@@ -38,6 +38,8 @@ public class CareProduct_details extends AppCompatActivity {
         plus = findViewById(R.id.imageViewPlus);
         minus = findViewById(R.id.imageViewMinus);
         quantity = findViewById(R.id.textViewQuantity);
+        btnBuyNow = findViewById(R.id.buttonCareBuyNow);
+        btnAddCart = findViewById(R.id.buttonCareAddCart);
         carediscription.setText(caredescription);
         careproductname.setText(carename);
         careproductdes.setText(caredes);
@@ -81,5 +83,18 @@ public class CareProduct_details extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnBuyNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CareProduct_details.this,Purchased.class);
+                intent.putExtra("name",carename);
+                intent.putExtra("price",careprice);
+                intent.putExtra("image",careimage);
+                intent.putExtra("quantity",totalQuantity);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }
