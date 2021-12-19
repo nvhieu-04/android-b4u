@@ -20,6 +20,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.b4u.adapter.AllCategoryAdapter;
 import com.example.b4u.adapter.CategoryAdapter;
@@ -134,5 +135,4 @@ public class SecondFragment extends Fragment {
         allCategoryAdapter = new AllCategoryAdapter(this.getContext(), allcategoryDataList);
         allCategoryRecycler.setAdapter(allCategoryAdapter);
     }
-
 }

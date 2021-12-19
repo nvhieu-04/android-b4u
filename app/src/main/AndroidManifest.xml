@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.B4u">
         <activity
+            android:name=".CateItem"
+            android:exported="true" />
+        <activity
             android:name=".AboutUs"
             android:exported="false" />
         <activity
