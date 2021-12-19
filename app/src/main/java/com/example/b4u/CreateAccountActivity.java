@@ -118,7 +118,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                 }
                 if(phone.length() < 10)
                 {
-                    fPassword.setError("Vui lòng nhập lại số điện thoại cho hợp lí");
+                    fPhone.setError("Vui lòng nhập lại số điện thoại cho hợp lí");
                     return;
                 }
                 if(!password.equals(passwordCheck))
