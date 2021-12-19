@@ -100,7 +100,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
-        android:textColor="@color/black"
+        android:textColor="#FF0000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.031"
@@ -225,6 +225,18 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/careproductName"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="16dp"
+        android:text="đ"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/careproductPrice"
+        app:layout_constraintTop_toBottomOf="@+id/careproductDes" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

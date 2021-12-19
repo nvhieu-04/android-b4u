@@ -7,6 +7,18 @@
     tools:context=".Product_details">
 
 
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="16dp"
+        android:text="đ"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/productPrice"
+        app:layout_constraintTop_toBottomOf="@+id/productDes" />
+
     <Button
         android:id="@+id/buttonBuyNow"
         android:layout_width="170dp"
@@ -92,15 +104,16 @@
 
     <TextView
         android:id="@+id/productPrice"
-        android:layout_width="0dp"
-        android:layout_height="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textColor="#FF0000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.015"
         app:layout_constraintStart_toEndOf="@+id/textView21"
         app:layout_constraintTop_toBottomOf="@+id/productDes" />
 
