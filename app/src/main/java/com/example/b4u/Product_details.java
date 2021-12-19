@@ -5,14 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Product_details extends AppCompatActivity {
     String name,des,price,rate,description;
     int image;
-    ImageView img,back,cart;
-    TextView productname,productdes, productprice, productrate,productdescription;
+    ImageView img,back,cart,minus,plus;
+    TextView productname,productdes, productprice, productrate,productdescription,quantity;
+    Button btnBuyNow,btnAddCart;
+    int totalQuantity = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,9 @@ public class Product_details extends AppCompatActivity {
         img = findViewById(R.id.imageProduct);
         back = findViewById(R.id.back);
         cart = findViewById(R.id.cart);
+        plus = findViewById(R.id.image_plus);
+        minus = findViewById(R.id.img_minus);
+        quantity = findViewById(R.id.textQuantity);
         productname.setText(name);
         productdes.setText(des);
         productprice.setText(price);
@@ -42,6 +48,24 @@ public class Product_details extends AppCompatActivity {
         View decorView = getWindow().getDecorView();
 
 
+        minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(totalQuantity > 1)
+                {
+                    totalQuantity--;
+                    quantity.setText(String.valueOf(totalQuantity));
+
+                }
+            }
+        });
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                totalQuantity++;
+                quantity.setText(String.valueOf(totalQuantity));
+            }
+        });
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

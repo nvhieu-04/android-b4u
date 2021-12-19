@@ -8,16 +8,16 @@
 
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/buttonBuyNow"
         android:layout_width="170dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="8dp"
         android:text="Mua Ngay"
-        app:layout_constraintBottom_toBottomOf="@+id/button5"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonAddCart"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAddCart"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button5" />
+        app:layout_constraintTop_toTopOf="@+id/buttonAddCart" />
 
     <ImageView
         android:id="@+id/back"
@@ -115,16 +115,16 @@
         app:layout_constraintTop_toTopOf="@+id/textView4" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/buttonAddCart"
         android:layout_width="170dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:text="Thêm Vào Giỏ Hàng"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/productRate" />
+        app:layout_constraintStart_toEndOf="@+id/buttonBuyNow"
+        app:layout_constraintTop_toBottomOf="@+id/textQuantity" />
 
     <TextView
         android:id="@+id/textView4"
@@ -147,5 +147,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/productPrice"
         app:layout_constraintTop_toBottomOf="@+id/productPrice" />
+
+    <TextView
+        android:id="@+id/textQuantity"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="24dp"
+        android:text="1"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/productRate"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/productRate" />
+
+    <ImageView
+        android:id="@+id/image_plus"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textQuantity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textQuantity"
+        app:layout_constraintTop_toTopOf="@+id/textQuantity"
+        app:srcCompat="@drawable/plus" />
+
+    <ImageView
+        android:id="@+id/img_minus"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textQuantity"
+        app:layout_constraintEnd_toStartOf="@+id/textQuantity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textQuantity"
+        app:srcCompat="@drawable/minus" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
