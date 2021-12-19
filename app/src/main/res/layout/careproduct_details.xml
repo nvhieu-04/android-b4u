@@ -50,8 +50,8 @@
 
     <ImageView
         android:id="@+id/careimageProduct"
-        android:layout_width="287dp"
-        android:layout_height="283dp"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
         android:layout_marginStart="21dp"
         android:layout_marginTop="16dp"
 
@@ -59,6 +59,7 @@
         android:background="@drawable/border"
         android:src="@drawable/product_12"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/careback" />
 
@@ -67,12 +68,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/open_sans_bold"
         android:text="TextView"
-        android:textSize="26sp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/careimageProduct" />
 
@@ -80,22 +83,28 @@
         android:id="@+id/careproductDes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:textColor="@color/black"
+
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/careproductName"
         app:layout_constraintTop_toBottomOf="@+id/careproductName" />
 
     <TextView
         android:id="@+id/careproductPrice"
-        android:layout_width="0dp"
-        android:layout_height="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/careproductDes"
+        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintStart_toEndOf="@+id/textView18"
         app:layout_constraintTop_toBottomOf="@+id/careproductDes" />
 
     <TextView
@@ -106,6 +115,7 @@
         android:layout_marginEnd="8dp"
         android:text="TextView"
         android:textSize="18sp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4"
@@ -127,10 +137,11 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="Đánh giá: "
+        android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/textViewcareDescription"
+        app:layout_constraintStart_toStartOf="@+id/careproductName"
         app:layout_constraintTop_toBottomOf="@+id/textViewcareDescription" />
 
     <TextView
@@ -140,21 +151,24 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:text="TextView"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/careproductPrice"
-        app:layout_constraintTop_toBottomOf="@+id/careproductPrice" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/careproductName"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <TextView
         android:id="@+id/textViewQuantity"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="1"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/careproductRate"
+        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/careproductRate" />
 
@@ -179,6 +193,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textViewQuantity"
         app:srcCompat="@drawable/minus" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Thương hiệu:"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/careproductDes"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/careproductName"
+        app:layout_constraintTop_toBottomOf="@+id/careproductName" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Giá:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/careproductName"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Mô tả sản phẩm:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/careproductName"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
