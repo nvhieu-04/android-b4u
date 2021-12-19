@@ -7,24 +7,25 @@
 
     <TextView
         android:id="@+id/productName4"
-        android:layout_width="161dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="216dp"
+        android:layout_width="109dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="244dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/open_sans_bold"
         android:text="Volumnous"
-        android:textSize="26sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/careimageProduct4" />
 
     <TextView
         android:id="@+id/productName3"
-        android:layout_width="162dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="52dp"
+        android:layout_width="109dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="68dp"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/open_sans_bold"
         android:text="HAUS LABO"
-        android:textSize="26sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/careimageProduct3" />
 
@@ -32,10 +33,11 @@
         android:id="@+id/productName2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="228dp"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/open_sans_bold"
         android:text="KYLIE Skin"
-        android:textSize="26sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/careimageProduct2" />
 
@@ -56,13 +58,13 @@
 
     <TextView
         android:id="@+id/productName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="6dp"
+        android:layout_width="129dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/open_sans_bold"
         android:text="TextView"
-        android:textSize="26sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/careimageProduct" />
 
@@ -101,32 +103,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:src="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/carecart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_cart"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
         android:fontFamily="@font/open_sans_bold"
         android:text="Chi Tiết Sản Phẩm"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/careback"
-        app:layout_constraintEnd_toStartOf="@+id/carecart"
         app:layout_constraintStart_toEndOf="@+id/careback"
-        app:layout_constraintTop_toTopOf="@+id/careback" />
+        app:layout_constraintTop_toTopOf="@+id/careback"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/careimageProduct"
