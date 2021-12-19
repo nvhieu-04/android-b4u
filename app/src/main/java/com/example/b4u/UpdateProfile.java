@@ -36,7 +36,7 @@ public class UpdateProfile extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
     Button btnUpdate;
-    EditText fName,fBirthday,fPhone;
+    EditText fName,fBirthday,fPhone,fAdd;
     ImageView btnBack;
     DatePickerDialog picker;
     @Override
@@ -48,6 +48,7 @@ public class UpdateProfile extends AppCompatActivity {
         fBirthday = findViewById(R.id.editTextBirth2);
         btnUpdate = findViewById(R.id.buttonUpdate);
         btnBack = findViewById(R.id.backButton);
+        fAdd = findViewById(R.id.editTextAdd2);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
         userID = firebaseAuth.getCurrentUser().getUid();
@@ -87,6 +88,7 @@ public class UpdateProfile extends AppCompatActivity {
                 fName.setText(documentSnapshot.getString("fName"));
                 fPhone.setText(documentSnapshot.getString("fPhone"));
                 fBirthday.setText(documentSnapshot.getString("fBirthDay"));
+                fAdd.setText(documentSnapshot.getString("fAddress"));
             }
         });
         btnUpdate.setOnClickListener(new View.OnClickListener() {
@@ -95,12 +97,14 @@ public class UpdateProfile extends AppCompatActivity {
                 String name = fName.getText().toString().trim();
                 String phone = fPhone.getText().toString().trim();
                 String birth = fBirthday.getText().toString().trim();
+                String address = fAdd.getText().toString().trim();
                 DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
                 documentReference
                         .update(
                                 "fName",name,
                                 "fPhone",phone,
-                                "fBirthDay",birth
+                                "fBirthDay",birth,
+                                "fAddress",address
                         )
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
