@@ -17,7 +17,7 @@ public class AboutUs extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AboutUs.this, MainActivity.class));
+                startActivity(new Intent(AboutUs.this, ThirdFragment.class));
             }
         });
     }
