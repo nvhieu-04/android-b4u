@@ -34,7 +34,7 @@ public class Purchased extends AppCompatActivity {
     String fname,fPrice;
     int fQuantity;
     int image,priceProductInt;
-    int ship = 350000;
+    int ship = 35000;
     ImageView imgProuct;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
@@ -46,7 +46,6 @@ public class Purchased extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
         userID = firebaseAuth.getCurrentUser().getUid();
-        reference = FirebaseDatabase.getInstance().getReference().child("users");
         Intent i = getIntent();
         fname = i.getStringExtra("name");
         fPrice = i.getStringExtra("price");
@@ -87,10 +86,10 @@ public class Purchased extends AppCompatActivity {
         String getPhone = phone.getText().toString().trim();
         String getAdd = address.getText().toString().trim();
         String timestamps = ""+System.currentTimeMillis();
+        reference = FirebaseDatabase.getInstance().getReference().child("users");
         buttonPurchased.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 HashMap<String,Object> data = new HashMap<>();
                 data.put("NameProduct",fname);
                 data.put("PriceProduct",""+fPrice);
@@ -100,7 +99,6 @@ public class Purchased extends AppCompatActivity {
                 data.put("Phone",getPhone);
                 data.put("Address",getAdd);
                 data.put("Time",timestamps);
-
                 reference.child(firebaseAuth.getUid()).child("Purchased").child(timestamps).setValue(data)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override

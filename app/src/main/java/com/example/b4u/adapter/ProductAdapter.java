@@ -2,6 +2,7 @@ package com.example.b4u.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import com.example.b4u.R;
 import com.example.b4u.model.Product;
 import com.google.protobuf.StringValue;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
@@ -26,6 +28,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     public ProductAdapter(Context context, List<Product> productList) {
         this.context = context;
         this.productList = productList;
+
     }
 
     @NonNull
@@ -60,6 +63,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         });
 
     }
+    public void filterList(ArrayList<Product> filterList)
+    {
+        productList = filterList;
+        notifyDataSetChanged();
+    }
 
     @Override
     public int getItemCount() {
@@ -80,4 +88,5 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         }
     }
+
 }
