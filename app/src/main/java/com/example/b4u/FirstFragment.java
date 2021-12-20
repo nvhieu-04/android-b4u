@@ -81,7 +81,7 @@ public class FirstFragment extends Fragment {
     List<Product> productList;
     CareProductAdapter careProductAdapter;
     List<CareProduct> careProductList;
-    TextView userName;
+    TextView userName,seeAll;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
     String userID;
@@ -193,10 +193,17 @@ public class FirstFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         NavController navController = Navigation.findNavController(view);
         ImageView user = view.findViewById(R.id.imageUser);
+        seeAll = view.findViewById(R.id.textView33);
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 navController.navigate(R.id.action_firstFragment_to_thirdFragment);
+            }
+        });
+        seeAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_firstFragment_to_secondFragment);
             }
         });
 

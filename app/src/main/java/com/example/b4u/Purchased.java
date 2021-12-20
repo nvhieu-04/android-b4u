@@ -103,8 +103,7 @@ public class Purchased extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                Toast.makeText(Purchased.this,"Đã Đặt Hàng Thành Công",Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(Purchased.this,MainActivity.class));
+
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -112,6 +111,8 @@ public class Purchased extends AppCompatActivity {
                         Toast.makeText(Purchased.this,"Thất Bại",Toast.LENGTH_SHORT).show();
                     }
                 });
+                Toast.makeText(Purchased.this,"Đã Đặt Hàng Thành Công",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Purchased.this,MainActivity.class));
             }
         });
 

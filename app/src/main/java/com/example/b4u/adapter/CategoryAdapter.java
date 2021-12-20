@@ -1,6 +1,7 @@
 package com.example.b4u.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.b4u.R;
+import com.example.b4u.SecondFragment;
 import com.example.b4u.model.Category;
 
 import java.util.List;

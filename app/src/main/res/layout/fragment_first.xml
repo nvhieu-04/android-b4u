@@ -184,6 +184,15 @@
                 </androidx.recyclerview.widget.RecyclerView>
 
                 <TextView
+                    android:id="@+id/textView33"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Xem Tất Cả"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
                     android:id="@+id/textproduct"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
