@@ -19,24 +19,12 @@
         <entry key="..\:/Users/PC/android-b4u/app/src/main/res/drawable/custom_button_pink.xml" value="0.2703125" />
         <entry key="..\:/Users/PC/android-b4u/app/src/main/res/drawable/custom_button_white.xml" value="0.2703125" />
         <entry key="..\:/Users/PC/android-b4u/app/src/main/res/drawable/splash_screen.xml" value="0.2703125" />
-        <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/activity_about_us.xml" value="0.25" />
         <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/activity_cart_acitivity.xml" value="0.10648148148148148" />
-        <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/activity_cate_item.xml" value="0.12158054711246201" />
         <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/activity_create_account.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/activity_intro.xml" value="0.15489130434782608" />
         <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/activity_login.xml" value="0.4" />
         <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/activity_main.xml" value="0.10648148148148148" />
-        <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/activity_product_details.xml" value="0.25" />
-        <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/activity_purchased.xml" value="0.25" />
         <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/activity_splash.xml" value="0.15353260869565216" />
-        <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/activity_update_profile.xml" value="0.25" />
-        <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/all_category_list.xml" value="0.12158054711246201" />
-        <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/careproduct_details.xml" value="0.25" />
-        <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/category_list.xml" value="0.25" />
-        <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/fragment_first.xml" value="0.12158054711246201" />
-        <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/fragment_fourth.xml" value="0.25" />
-        <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/fragment_second.xml" value="0.12158054711246201" />
-        <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/fragment_third.xml" value="0.25" />
         <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/intro_1.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/intro_2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PC/android-b4u/app/src/main/res/layout/intro_3.xml" value="0.25416666666666665" />
@@ -86,9 +74,16 @@
         <entry key="..\:/b4u/android-b4u/app/src/main/res/drawable/box_rectangle_profile.xml" value="0.26614583333333336" />
         <entry key="..\:/b4u/android-b4u/app/src/main/res/drawable/header_background.xml" value="0.26614583333333336" />
         <entry key="..\:/b4u/android-b4u/app/src/main/res/layout/activity_about_us.xml" value="0.6914414414414415" />
+        <entry key="..\:/b4u/android-b4u/app/src/main/res/layout/activity_cart_acitivity.xml" value="0.12708333333333333" />
+        <entry key="..\:/b4u/android-b4u/app/src/main/res/layout/activity_create_account.xml" value="0.1793478260869565" />
+        <entry key="..\:/b4u/android-b4u/app/src/main/res/layout/activity_intro.xml" value="0.1793478260869565" />
+        <entry key="..\:/b4u/android-b4u/app/src/main/res/layout/activity_login.xml" value="0.1793478260869565" />
+        <entry key="..\:/b4u/android-b4u/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
         <entry key="..\:/b4u/android-b4u/app/src/main/res/layout/activity_product_details.xml" value="0.536" />
+        <entry key="..\:/b4u/android-b4u/app/src/main/res/layout/activity_splash.xml" value="0.1793478260869565" />
         <entry key="..\:/b4u/android-b4u/app/src/main/res/layout/activity_update_profile.xml" value="0.25" />
         <entry key="..\:/b4u/android-b4u/app/src/main/res/layout/careproduct_details.xml" value="0.4" />
+        <entry key="..\:/b4u/android-b4u/app/src/main/res/layout/category_list.xml" value="0.4" />
         <entry key="..\:/b4u/android-b4u/app/src/main/res/layout/fragment_first.xml" value="0.25" />
         <entry key="..\:/b4u/android-b4u/app/src/main/res/layout/fragment_second.xml" value="0.17255434782608695" />
         <entry key="..\:/b4u/android-b4u/app/src/main/res/layout/fragment_third.xml" value="0.264" />

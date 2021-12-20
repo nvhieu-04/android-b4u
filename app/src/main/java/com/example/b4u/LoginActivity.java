@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                 EditText resetMail = new EditText(view.getContext());
                 AlertDialog.Builder passwordReset = new AlertDialog.Builder(view.getContext());
                 passwordReset.setTitle("Quên Mật Khẩu");
-                passwordReset.setMessage("Bạn cho tụi mình xin địa chỉ email của bạn nhé?");
+                passwordReset.setMessage("Hãy nhập địa chỉ email của bạn phía dưới nhé?");
                 passwordReset.setView(resetMail);
                 passwordReset.setPositiveButton("Gửi", new DialogInterface.OnClickListener() {
                     @Override
@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
                         firebaseAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                Toast.makeText(LoginActivity.this,"Bạn vui lòng kiểm tra email của mình nhé!",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this,"Bạn vui lòng kiểm tra email của mình!",Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
