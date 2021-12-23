@@ -33,7 +33,7 @@ public class Purchased extends AppCompatActivity {
     String userID;
     String fname,fPrice;
     int fQuantity;
-    int image,priceProductInt;
+    int image,priceProductInt, total;
     int ship = 35000;
     ImageView imgProuct;
     FirebaseAuth firebaseAuth;
@@ -64,13 +64,23 @@ public class Purchased extends AppCompatActivity {
         imgProuct.setImageResource(image);
         nameProduct.setText("Tên Sản Phẩm: "+fname);
         productQuantity.setText("Số Lượng: "+String.valueOf(fQuantity));
-        priceProduct.setText("Đơn Gía: "+fPrice+" VNĐ");
-        productDelivery.setText(String.valueOf(ship)+ " VNĐ");
+        priceProduct.setText("Đơn Giá: "+fPrice+" VNĐ");
 
         //Tính tổng tiền sản phẩm
         priceProductInt = Integer.parseInt(fPrice);
-        int total = (priceProductInt * fQuantity) + ship;
-        productTotal.setText(String.valueOf(total)+" VNĐ");
+        total = (priceProductInt * fQuantity);
+
+        if(total > 400000)
+        {
+            productTotal.setText(String.valueOf(total)+" VNĐ");
+            productDelivery.setText("Miễn phí giao hàng.");
+        }
+        else {
+            total = total + ship;
+            productTotal.setText(String.valueOf(total)+" VNĐ");
+            productDelivery.setText(String.valueOf(ship)+ " VNĐ");
+        }
+
 
         //Get Information User
         DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
@@ -82,14 +92,15 @@ public class Purchased extends AppCompatActivity {
                 address.setText(documentSnapshot.getString("fAddress"));
             }
         });
-        String getName = name.getText().toString().trim();
-        String getPhone = phone.getText().toString().trim();
-        String getAdd = address.getText().toString().trim();
+
         String timestamps = ""+System.currentTimeMillis();
         reference = FirebaseDatabase.getInstance().getReference().child("users");
         buttonPurchased.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String getName = name.getText().toString().trim();
+                String getPhone = phone.getText().toString().trim();
+                String getAdd = address.getText().toString().trim();
                 HashMap<String,Object> data = new HashMap<>();
                 data.put("NameProduct",fname);
                 data.put("PriceProduct",""+fPrice);
@@ -103,7 +114,8 @@ public class Purchased extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-
+                                Toast.makeText(Purchased.this,"Đã Đặt Hàng Thành Công",Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(Purchased.this,MainActivity.class));
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override
@@ -111,8 +123,7 @@ public class Purchased extends AppCompatActivity {
                         Toast.makeText(Purchased.this,"Thất Bại",Toast.LENGTH_SHORT).show();
                     }
                 });
-                Toast.makeText(Purchased.this,"Đã Đặt Hàng Thành Công",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Purchased.this,MainActivity.class));
+
             }
         });
 
