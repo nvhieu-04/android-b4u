@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -102,6 +103,20 @@ public class Purchased extends AppCompatActivity {
                 String getPhone = phone.getText().toString().trim();
                 String getAdd = address.getText().toString().trim();
                 HashMap<String,Object> data = new HashMap<>();
+                if(TextUtils.isEmpty(getName))
+                {
+                    name.setError("Tên không được để trống.");
+                    return;
+                }
+                if(TextUtils.isEmpty(getPhone))
+                {
+                    phone.setError("Số điện thoại không được để trống.");
+                    return;
+                } if(TextUtils.isEmpty(getAdd))
+                {
+                    address.setError("Địa chỉ được để trống.");
+                    return;
+                }
                 data.put("NameProduct",fname);
                 data.put("PriceProduct",""+fPrice);
                 data.put("QuantityProduct",""+fQuantity);

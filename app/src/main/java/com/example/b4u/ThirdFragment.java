@@ -84,7 +84,6 @@ public class ThirdFragment extends Fragment {
        btn_SignOut = v.findViewById(R.id.btnSignOut);
        btn_ChangeProfile = v.findViewById(R.id.btnChangeProfile);
        btn_Purchased = v.findViewById(R.id.btnPurchased);
-       btn_Delivery = v.findViewById(R.id.btnDelivery);
        btn_About = v.findViewById(R.id.btnAbout);
        fUser = v.findViewById(R.id.textNameUser);
        fMail = v.findViewById(R.id.textMail);
@@ -125,6 +124,14 @@ public class ThirdFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        btn_Purchased.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity().getApplication(),Bought.class);
+                startActivity(intent);
+            }
+        });
+
        return v;
     }
     ImageView home_btn,cart_btn;
