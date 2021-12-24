@@ -10,10 +10,30 @@ public class PurchasedProduct {
     String Phone;
     String Address;
     String Time;
+    String PriceProduct;
+
+    public PurchasedProduct(String nameProduct, String totalPrice, String quantityProduct, String name, String phone, String address, String time, String priceProduct) {
+        NameProduct = nameProduct;
+        TotalPrice = totalPrice;
+        QuantityProduct = quantityProduct;
+        Name = name;
+        Phone = phone;
+        Address = address;
+        Time = time;
+        PriceProduct = priceProduct;
+    }
 
     public PurchasedProduct()
     {
 
+    }
+
+    public String getPriceProduct() {
+        return PriceProduct;
+    }
+
+    public void setPriceProduct(String priceProduct) {
+        PriceProduct = priceProduct;
     }
 
     public PurchasedProduct(String nameProduct, String totalPrice, String quantityProduct, String name, String phone, String address, String time) {

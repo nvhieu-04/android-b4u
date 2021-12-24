@@ -35,12 +35,14 @@ public class PurchasedAdapter extends RecyclerView.Adapter<PurchasedAdapter.Purc
     public void onBindViewHolder(@NonNull PurchasedApdapterViewHolder holder, int position) {
         PurchasedProduct purchasedProduct = productList.get(position);
         holder.nameProduct.setText("Tên sản phẩm: " + purchasedProduct.getNameProduct());
-        holder.priceProduct.setText("Giá: " + purchasedProduct.getTotalPrice());
+
+        holder.priceProduct.setText("Tổng giá trị đơn hàng: " + purchasedProduct.getTotalPrice() +" VNĐ");
         holder.ID.setText("Mã đơn hàng: " + purchasedProduct.getTime());
         holder.nameUser.setText("Tên người đặt hàng: " + purchasedProduct.getName() );
         holder.phoneUser.setText("Số điện thoại: "+ purchasedProduct.getPhone());
         holder.addUser.setText("Địa chỉ giao hàng: " +purchasedProduct.getAddress());
         holder.quantityProduct.setText("Số lượng: "+ purchasedProduct.getQuantityProduct());
+        holder.price.setText("Giá sản phẩm: "+purchasedProduct.getPriceProduct() +" VNĐ");
     }
 
     @Override
@@ -65,6 +67,7 @@ public class PurchasedAdapter extends RecyclerView.Adapter<PurchasedAdapter.Purc
         private TextView phoneUser;
         private TextView addUser;
         private TextView quantityProduct;
+        private TextView price;
 
         public PurchasedApdapterViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -75,6 +78,7 @@ public class PurchasedAdapter extends RecyclerView.Adapter<PurchasedAdapter.Purc
             phoneUser = itemView.findViewById(R.id.boughtPhone);
             addUser = itemView.findViewById(R.id.boughtAddress);
             quantityProduct = itemView.findViewById(R.id.boughtQuantity);
+            price = itemView.findViewById(R.id.boughtPriceProduct);
         }
     }
 }

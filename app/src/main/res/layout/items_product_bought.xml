@@ -24,8 +24,9 @@
         android:layout_marginEnd="8dp"
         android:text="Số Lượng"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/boughtProduct"
-        app:layout_constraintTop_toBottomOf="@+id/boughtProduct" />
+        app:layout_constraintTop_toBottomOf="@+id/boughtPriceProduct" />
 
     <TextView
         android:id="@+id/boughtPrice"
@@ -82,4 +83,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/boughtAddress"
         app:layout_constraintTop_toBottomOf="@+id/boughtAddress" />
+
+    <TextView
+        android:id="@+id/boughtPriceProduct"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/boughtProduct"
+        app:layout_constraintTop_toBottomOf="@+id/boughtProduct" />
 </androidx.constraintlayout.widget.ConstraintLayout>
