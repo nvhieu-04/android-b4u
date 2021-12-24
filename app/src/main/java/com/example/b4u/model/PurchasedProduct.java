@@ -3,92 +3,94 @@ package com.example.b4u.model;
 import java.util.HashMap;
 
 public class PurchasedProduct {
-    String nameProduct;
-    String priceProduct;
-    String quantityProduct;
-    String nameUser;
-    String phoneUser;
-    String addressUser;
-    String ID;
+    String NameProduct;
+    String TotalPrice;
+    String QuantityProduct;
+    String Name;
+    String Phone;
+    String Address;
+    String Time;
 
     public PurchasedProduct()
     {
 
     }
-    public PurchasedProduct(String nameProduct, String priceProduct, String quantityProduct, String nameUser, String phoneUser, String addressUser, String ID) {
-        this.nameProduct = nameProduct;
-        this.priceProduct = priceProduct;
-        this.quantityProduct = quantityProduct;
-        this.nameUser = nameUser;
-        this.phoneUser = phoneUser;
-        this.addressUser = addressUser;
-        this.ID = ID;
+
+    public PurchasedProduct(String nameProduct, String totalPrice, String quantityProduct, String name, String phone, String address, String time) {
+        NameProduct = nameProduct;
+        TotalPrice = totalPrice;
+        QuantityProduct = quantityProduct;
+        Name = name;
+        Phone = phone;
+        Address = address;
+        Time = time;
     }
 
     public String getNameProduct() {
-        return nameProduct;
+        return NameProduct;
     }
 
     public void setNameProduct(String nameProduct) {
-        this.nameProduct = nameProduct;
+        NameProduct = nameProduct;
     }
 
-    public String getPriceProduct() {
-        return priceProduct;
+    public String getTotalPrice() {
+        return TotalPrice;
     }
 
-    public void setPriceProduct(String priceProduct) {
-        this.priceProduct = priceProduct;
+    public void setTotalPrice(String totalPrice) {
+        TotalPrice = totalPrice;
     }
 
     public String getQuantityProduct() {
-        return quantityProduct;
+        return QuantityProduct;
     }
 
     public void setQuantityProduct(String quantityProduct) {
-        this.quantityProduct = quantityProduct;
+        QuantityProduct = quantityProduct;
     }
 
-    public String getNameUser() {
-        return nameUser;
+    public String getName() {
+        return Name;
     }
 
-    public void setNameUser(String nameUser) {
-        this.nameUser = nameUser;
+    public void setName(String name) {
+        Name = name;
     }
 
-    public String getPhoneUser() {
-        return phoneUser;
+    public String getPhone() {
+        return Phone;
     }
 
-    public void setPhoneUser(String phoneUser) {
-        this.phoneUser = phoneUser;
+    public void setPhone(String phone) {
+        Phone = phone;
     }
 
-    public String getAddressUser() {
-        return addressUser;
+    public String getAddress() {
+        return Address;
     }
 
-    public void setAddressUser(String addressUser) {
-        this.addressUser = addressUser;
+    public void setAddress(String address) {
+        Address = address;
     }
 
-    public String getID() {
-        return ID;
+    public String getTime() {
+        return Time;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setTime(String time) {
+        Time = time;
     }
+
     public HashMap<String,Object> toMap(){
         HashMap<String, Object> result = new HashMap<>();
-        result.put("Address",addressUser);
-        result.put("Name",nameUser);
-        result.put("NameProduct",nameProduct);
-        result.put("Phone",phoneUser);
-        result.put("TotalPrice",priceProduct);
-        result.put("QuantityProduct",quantityProduct);
-        result.put("PriceProduct",ID);
+        result.put("Address",Address);
+        result.put("Name",Name);
+        result.put("NameProduct",Name);
+        result.put("Phone",Phone);
+        result.put("TotalPrice",TotalPrice);
+        result.put("QuantityProduct",QuantityProduct);
+        result.put("Time",Time);
         return result;
     }
 }

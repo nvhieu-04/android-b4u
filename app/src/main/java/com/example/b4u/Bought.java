@@ -46,14 +46,15 @@ public class Bought extends AppCompatActivity {
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this,DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
         productList = new ArrayList<>();
-        purchasedAdapter = new PurchasedAdapter(productList);
+        purchasedAdapter = new PurchasedAdapter(productList,this);
         recyclerView.setAdapter(purchasedAdapter);
         getlistProduct();
     }
 
     private void getlistProduct(){
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        reference  = database.getReference("users").child(userID).child("Purchased");
+        reference  = database.getReference("users").child(firebaseAuth.getUid()).child("Purchased");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override

@@ -1,5 +1,6 @@
 package com.example.b4u.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,17 +15,19 @@ import com.example.b4u.model.PurchasedProduct;
 import java.util.List;
 
 public class PurchasedAdapter extends RecyclerView.Adapter<PurchasedAdapter.PurchasedApdapterViewHolder> {
-
+    Context context;
     private List<PurchasedProduct> productList;
 
-    public PurchasedAdapter(List<PurchasedProduct> productList) {
+    public PurchasedAdapter(List<PurchasedProduct> productList,Context context) {
+
         this.productList = productList;
+        this.context = context;
     }
 
     @NonNull
     @Override
     public PurchasedApdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.items_product_bought,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.items_product_bought,parent,false);
         return new PurchasedApdapterViewHolder(view);
     }
 
@@ -32,11 +35,11 @@ public class PurchasedAdapter extends RecyclerView.Adapter<PurchasedAdapter.Purc
     public void onBindViewHolder(@NonNull PurchasedApdapterViewHolder holder, int position) {
         PurchasedProduct purchasedProduct = productList.get(position);
         holder.nameProduct.setText("Tên sản phẩm: " + purchasedProduct.getNameProduct());
-        holder.priceProduct.setText("Giá: " + purchasedProduct.getPriceProduct());
-        holder.ID.setText("Mã đơn hàng: " + purchasedProduct.getID());
-        holder.nameUser.setText("Tên người đặt hàng: " + purchasedProduct.getNameUser() );
-        holder.phoneUser.setText("Số điện thoại: "+ purchasedProduct.getPhoneUser());
-        holder.addUser.setText("Địa chỉ giao hàng" +purchasedProduct.getAddressUser());
+        holder.priceProduct.setText("Giá: " + purchasedProduct.getTotalPrice());
+        holder.ID.setText("Mã đơn hàng: " + purchasedProduct.getTime());
+        holder.nameUser.setText("Tên người đặt hàng: " + purchasedProduct.getName() );
+        holder.phoneUser.setText("Số điện thoại: "+ purchasedProduct.getPhone());
+        holder.addUser.setText("Địa chỉ giao hàng: " +purchasedProduct.getAddress());
         holder.quantityProduct.setText("Số lượng: "+ purchasedProduct.getQuantityProduct());
     }
 
