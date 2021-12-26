@@ -6,21 +6,38 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+
 public class CareProduct_details extends AppCompatActivity {
-    String carename,caredes,careprice,carerate,caredescription;
+    String carename,caredes,careprice,carerate,caredescription,userID;
     int careimage;
     ImageView careimg,careback,carecart,plus,minus;
     TextView careproductname,careproductdes, careproductprice, careproductrate, carediscription,quantity;
     int totalQuantity = 1;
+    int totalPrice;
     Button btnBuyNow,btnAddCart;
+    FirebaseAuth firebaseAuth;
+    FirebaseFirestore firebaseFirestore;
+    DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.careproduct_details);
-
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        userID = firebaseAuth.getCurrentUser().getUid();
         Intent i = getIntent();
         carename = i.getStringExtra("carename");
         caredes = i.getStringExtra("caredescription");
@@ -92,6 +109,31 @@ public class CareProduct_details extends AppCompatActivity {
                 intent.putExtra("image",careimage);
                 intent.putExtra("quantity",totalQuantity);
                 startActivity(intent);
+            }
+        });
+        String timestamps = ""+System.currentTimeMillis();
+        reference = FirebaseDatabase.getInstance().getReference().child("users");
+        btnAddCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HashMap<String,Object> data = new HashMap<>();
+                totalPrice = (Integer.parseInt(careprice)*totalQuantity);
+                data.put("NameProduct",carename);
+                data.put("PriceProduct",careprice);
+                data.put("QuantityProduct",""+totalQuantity);
+                data.put("TotalPrice",""+ totalPrice);
+                reference.child(firebaseAuth.getUid()).child("Cart").child(carename).setValue(data)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(CareProduct_details.this,"Đã Thêm Vào Giỏ Hàng",Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(CareProduct_details.this,"Thất Bại",Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 

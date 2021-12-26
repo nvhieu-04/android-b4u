@@ -15,6 +15,7 @@ import com.example.b4u.model.PurchasedProduct;
 import java.util.List;
 
 public class PurchasedAdapter extends RecyclerView.Adapter<PurchasedAdapter.PurchasedApdapterViewHolder> {
+
     Context context;
     private List<PurchasedProduct> productList;
 
