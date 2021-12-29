@@ -44,9 +44,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
         Cart cart = cartList.get(position);
         holder.nameProduct.setText("Tên Sản Phẩm: "+ cart.getNameProduct());
-        holder.priceProduct.setText("Giá Sản Phẩm: "+cart.getPriceProduct());
+        holder.priceProduct.setText("Giá Sản Phẩm: "+cart.getPriceProduct()+" VNĐ");
         holder.quantityProduct.setText(cart.getQuantityProduct());
-        holder.totalPrice.setText("Tổng: " + cart.getTotalPrice());
+        holder.totalPrice.setText("Tổng: " + cart.getTotalPrice()+" VNĐ");
 
         //
         holder.minus.setOnClickListener(new View.OnClickListener() {

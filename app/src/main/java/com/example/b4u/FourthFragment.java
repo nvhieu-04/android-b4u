@@ -1,6 +1,7 @@
 package com.example.b4u;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,13 +19,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.b4u.adapter.CartAdapter;
 import com.example.b4u.adapter.PurchasedAdapter;
 import com.example.b4u.model.Cart;
 import com.example.b4u.model.PurchasedProduct;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -35,6 +40,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -82,6 +88,7 @@ public class FourthFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
     RecyclerView recyclerView;
     CartAdapter cartAdapter;
@@ -90,6 +97,9 @@ public class FourthFragment extends Fragment {
     FirebaseFirestore firebaseFirestore;
     DatabaseReference reference;
     String userID;
+    int quantityadd,quantityminus,pricreAlLProduct,totalPriceProduct;;
+    Button purchasedBtn;
+    TextView deliveryPrice,totalPrice,productPrice;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -99,6 +109,10 @@ public class FourthFragment extends Fragment {
         firebaseFirestore = FirebaseFirestore.getInstance();
         userID = firebaseAuth.getCurrentUser().getUid();
         recyclerView = v.findViewById(R.id.recyclerviewCart);
+        productPrice = v.findViewById(R.id.totalFeeTxt);
+        totalPrice = v.findViewById(R.id.totalTxt);
+        deliveryPrice = v.findViewById(R.id.deliveryTxt);
+        purchasedBtn = v.findViewById(R.id.btnPurchase);
         LinearLayoutManager linearLayout = new LinearLayoutManager(this.getContext());
         recyclerView.setLayoutManager(linearLayout);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this.getContext(),DividerItemDecoration.VERTICAL);
@@ -108,12 +122,33 @@ public class FourthFragment extends Fragment {
 
             @Override
             public void onClickAddItems(Cart cart) {
+              quantityadd =  Integer.parseInt(cart.getQuantityProduct());
+              int price =  Integer.parseInt(cart.getPriceProduct());
+              quantityadd++;
+              int total = (quantityadd * price);
+                HashMap<String,Object> data = new HashMap<>();
+                data.put("QuantityProduct",""+quantityadd);
+                data.put("TotalPrice",""+total);
+                data.put("NameProduct",cart.getNameProduct());
+                data.put("PriceProduct",cart.getPriceProduct());
+                reference.child(cart.getNameProduct()).setValue(data);
 
             }
 
             @Override
             public void onClickMinusItems(Cart cart) {
-
+                quantityminus =  Integer.parseInt(cart.getQuantityProduct());
+                int price =  Integer.parseInt(cart.getPriceProduct());
+                if(quantityminus > 1) {
+                    quantityminus--;
+                    int total = (quantityminus * price);
+                    HashMap<String, Object> data = new HashMap<>();
+                    data.put("QuantityProduct", "" + quantityminus);
+                    data.put("TotalPrice", "" + total);
+                    data.put("NameProduct",cart.getNameProduct());
+                    data.put("PriceProduct",cart.getPriceProduct());
+                    reference.child(cart.getNameProduct()).setValue(data);
+                }
             }
 
             @Override
@@ -126,28 +161,25 @@ public class FourthFragment extends Fragment {
         reference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-//                Cart cart = snapshot.getValue(Cart.class);
-//                if(cart != null)
-//                {
-//                    cartList.add(cart);
+
                     cartAdapter.notifyDataSetChanged();
-//                }
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-//                Cart cart = snapshot.getValue(Cart.class);
-//                if(cart == null || cartList == null || cartList.isEmpty())
-//                {
-//                    return;
-//                }
-//                for (int i = 0 ; i < cartList.size() ; i++)
-//                {
-//                    if(cart.getNameProduct() == cartList.get(i).getNameProduct()) {
-//                        cartList.set(i,cart);
-//                        break;
-//                    }
-//                }
+                Cart cart = snapshot.getValue(Cart.class);
+                cartList.clear();
+                if(cart == null || cartList == null || cartList.isEmpty())
+                {
+                    return;
+                }
+                for (int i = 0 ; i < cartList.size() ; i++)
+                {
+                    if(cart.getNameProduct() == cartList.get(i).getNameProduct()) {
+                        cartList.set(i,cart);
+                        break;
+                    }
+                }
                 cartAdapter.notifyDataSetChanged();
             }
 
@@ -162,9 +194,11 @@ public class FourthFragment extends Fragment {
                 {
                     if(cart.getNameProduct() == cartList.get(i).getNameProduct()) {
                         cartList.remove(cartList.get(i));
+                        cartList.clear();
                         break;
                     }
                 }
+
                 cartAdapter.notifyDataSetChanged();
             }
 
@@ -178,6 +212,18 @@ public class FourthFragment extends Fragment {
 
             }
         });
+        purchasedBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(v.getContext(),Purchased.class);
+                intent.putExtra("name","Mua Nhiều");
+                intent.putExtra("price",""+totalPriceProduct);
+//                intent.putExtra("image","");
+                intent.putExtra("quantity",1);
+                startActivity(intent);
+            }
+        });
+
         return v;
 
     }
@@ -202,6 +248,7 @@ public class FourthFragment extends Fragment {
                 .setNegativeButton("Quay Lại",null)
                 .show();
     }
+
     private void getlistProduct(){
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -213,6 +260,31 @@ public class FourthFragment extends Fragment {
                 for (DataSnapshot dataSnapshot :snapshot.getChildren()){
                     Cart cart = dataSnapshot.getValue(Cart.class);
                     cartList.add(cart);
+                }
+                pricreAlLProduct = 0;
+                for (int i = 0 ; i < cartList.size() ; i++)
+                {
+                    pricreAlLProduct += Integer.parseInt(cartList.get(i).getTotalPrice());
+                }
+                deliveryPrice.setText(" ");
+                productPrice.setText(String.valueOf(pricreAlLProduct)+" VNĐ");
+                if(pricreAlLProduct > 400000)
+                {
+                    deliveryPrice.setText("Miễn Phí Giao Hàng");
+                    totalPriceProduct = pricreAlLProduct;
+                    totalPrice.setText(String.valueOf(pricreAlLProduct)+" VNĐ");
+                }
+                else {
+                    if(cartList.isEmpty())
+                    {
+                        deliveryPrice.setText(" ");
+                    }
+                    else
+                    {
+                        deliveryPrice.setText("35000 VNĐ");
+                        totalPriceProduct = pricreAlLProduct + 35000;
+                        totalPrice.setText(String.valueOf(totalPriceProduct)+" VNĐ");
+                    }
                 }
                 cartAdapter.notifyDataSetChanged();
             }

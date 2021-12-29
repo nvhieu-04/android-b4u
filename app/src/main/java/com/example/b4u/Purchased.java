@@ -14,9 +14,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.b4u.model.Cart;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
@@ -64,6 +66,11 @@ public class Purchased extends AppCompatActivity {
         imgProuct = findViewById(R.id.imageProductPurchased);
         imgProuct.setImageResource(image);
         nameProduct.setText("Tên Sản Phẩm: "+fname);
+        if(fname == "Mua Nhiều")
+        {
+            nameProduct.setText("Đặt Hàng Nhiều Sản Phẩm");
+            fname = "Mua Nhiều Sản Phẩm";
+        }
         productQuantity.setText("Số Lượng: "+String.valueOf(fQuantity));
         priceProduct.setText("Đơn Giá: "+fPrice+" VNĐ");
 
@@ -130,7 +137,14 @@ public class Purchased extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void unused) {
                                 Toast.makeText(Purchased.this,"Đã Đặt Hàng Thành Công",Toast.LENGTH_SHORT).show();
+                                reference.child(userID).child("Cart").removeValue(new DatabaseReference.CompletionListener() {
+                                    @Override
+                                    public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
+                                        Toast.makeText(Purchased.this,"Complete",Toast.LENGTH_SHORT).show();
+                                    }
+                                });
                                 startActivity(new Intent(Purchased.this,MainActivity.class));
+
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override
