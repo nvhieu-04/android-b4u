@@ -66,11 +66,6 @@ public class Purchased extends AppCompatActivity {
         imgProuct = findViewById(R.id.imageProductPurchased);
         imgProuct.setImageResource(image);
         nameProduct.setText("Tên Sản Phẩm: "+fname);
-        if(fname == "Mua Nhiều")
-        {
-            nameProduct.setText("Đặt Hàng Nhiều Sản Phẩm");
-            fname = "Mua Nhiều Sản Phẩm";
-        }
         productQuantity.setText("Số Lượng: "+String.valueOf(fQuantity));
         priceProduct.setText("Đơn Giá: "+fPrice+" VNĐ");
 

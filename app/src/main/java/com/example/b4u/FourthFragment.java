@@ -96,7 +96,7 @@ public class FourthFragment extends Fragment {
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
     DatabaseReference reference;
-    String userID;
+    String userID,nameAllProduct;
     int quantityadd,quantityminus,pricreAlLProduct,totalPriceProduct;;
     Button purchasedBtn;
     TextView deliveryPrice,totalPrice,productPrice;
@@ -216,8 +216,8 @@ public class FourthFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(v.getContext(),Purchased.class);
-                intent.putExtra("name","Mua Nhiều");
-                intent.putExtra("price",""+totalPriceProduct);
+                intent.putExtra("name",nameAllProduct);
+                intent.putExtra("price",""+pricreAlLProduct);
 //                intent.putExtra("image","");
                 intent.putExtra("quantity",1);
                 startActivity(intent);
@@ -262,9 +262,11 @@ public class FourthFragment extends Fragment {
                     cartList.add(cart);
                 }
                 pricreAlLProduct = 0;
+                nameAllProduct = "";
                 for (int i = 0 ; i < cartList.size() ; i++)
                 {
                     pricreAlLProduct += Integer.parseInt(cartList.get(i).getTotalPrice());
+                    nameAllProduct += cartList.get(i).getNameProduct()+" x "+cartList.get(i).getQuantityProduct() +" / ";
                 }
                 deliveryPrice.setText(" ");
                 productPrice.setText(String.valueOf(pricreAlLProduct)+" VNĐ");
