@@ -43,7 +43,6 @@ public class CreateAccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
-        //
         fName = findViewById(R.id.editTextTextPersonName);
         fEmail = findViewById(R.id.editTextEmail);
         fPassword = findViewById(R.id.editTextPassword);

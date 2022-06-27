@@ -128,7 +128,7 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        //Get name on Home Screen
+        //Get name on UserProfile
         DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
         documentReference.addSnapshotListener(getActivity(), new EventListener<DocumentSnapshot>() {
             @Override

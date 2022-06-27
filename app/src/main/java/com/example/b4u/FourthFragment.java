@@ -215,6 +215,10 @@ public class FourthFragment extends Fragment {
         purchasedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(cartList.isEmpty())
+                {
+                    return;
+                }
                 Intent intent = new Intent(v.getContext(),Purchased.class);
                 intent.putExtra("name",nameAllProduct);
                 intent.putExtra("price",""+pricreAlLProduct);
@@ -280,6 +284,7 @@ public class FourthFragment extends Fragment {
                     if(cartList.isEmpty())
                     {
                         deliveryPrice.setText(" ");
+                        totalPrice.setText("0");
                     }
                     else
                     {
