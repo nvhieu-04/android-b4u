@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_background"
         android:fontFamily="@font/open_sans_bold"
@@ -33,13 +33,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+        app:layout_constraintTop_toBottomOf="@+id/btnPurchased" />
 
     <Button
         android:id="@+id/btnAbout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/button_background"
         android:fontFamily="@font/open_sans_bold"
         android:text="Về nhóm đồ án"
@@ -51,10 +51,10 @@
 
     <Button
         android:id="@+id/btnPurchased"
-        android:layout_width="145dp"
-        android:layout_height="145dp"
+        android:layout_width="140dp"
+        android:layout_height="148dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_background"
         android:drawableTop="@drawable/iconshiped100px"
@@ -69,22 +69,24 @@
         android:id="@+id/btnSignOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/button_background"
         android:fontFamily="@font/open_sans_bold"
         android:onClick="logout"
         android:text="Đăng Xuất"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/btnAbout"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btnAbout"
-        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/btnAbout" />
 
     <ImageView
         android:id="@+id/imageView24"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:src="@drawable/box_rectangle_profile"
         app:layout_constraintBottom_toBottomOf="@+id/imageView17"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,16 +110,16 @@
         android:id="@+id/textNameUser"
         android:layout_width="213dp"
         android:layout_height="34dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="8dp"
         android:text="Tên người dùng"
-        android:textAlignment="textStart"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textBirthday"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewProfile" />
 
     <TextView
